@@ -4,4 +4,8 @@ const nextConfig = {
   swcMinify: true,
 }
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const nextTranslate = require('next-translate')
+
 module.exports = nextConfig
+module.exports = nextTranslate
