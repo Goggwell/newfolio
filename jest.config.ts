@@ -1,15 +1,18 @@
-import nextJest from "next/jest";
+import nextJest from 'next/jest'
 
 const createJestConfig = nextJest({
-  dir: "./",
-});
+  dir: './',
+})
 
 // Add custom config to be passed to Jest
 const customJestConfig = {
-  setupFilesAfterEnv: ["@testing-library/jest-dom"],
-  moduleDirectories: ["node_modules", "<rootDir>/"], // needed to work if using TypeScript with baseURL of root
-  testEnvironment: "jest-environment-jsdom",
-  modulePathIgnorePatterns: ["cypress"],
-};
+  setupFilesAfterEnv: ['./setupTests.ts'],
+  moduleDirectories: ['node_modules', '<rootDir>/'], // needed to work if using TypeScript with baseURL of root
+  testEnvironment: 'jest-environment-jsdom',
+  modulePathIgnorePatterns: ['cypress'],
+  transform: {
+    '^.+\\.(ts|tsx)$': 'ts-jest',
+  },
+}
 
-module.exports = createJestConfig(customJestConfig);
+module.exports = createJestConfig(customJestConfig)

@@ -26,3 +26,6 @@ describe('Navigation', () => {
     cy.get('h1').contains('About Me')
   })
 })
+
+// prevent TypeScript from reading as legacy script
+export {}
