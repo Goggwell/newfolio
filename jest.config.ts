@@ -8,6 +8,11 @@ const createJestConfig = nextJest({
 const customJestConfig = {
   setupFilesAfterEnv: ['./setupTests.ts'],
   moduleDirectories: ['node_modules', '<rootDir>/'], // needed to work if using TypeScript with baseURL of root
+  moduleNameMapper: {
+    '^@/components/(.*)$': '<rootDir>/components/$1',
+    '^@/pages/(.*)$': '<rootDir>/pages/$1',
+    '^@/styles/(.*)$': '<rootDir>/styles/$1',
+  },
   testEnvironment: 'jest-environment-jsdom',
   modulePathIgnorePatterns: ['cypress'],
   transform: {
