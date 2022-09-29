@@ -1,20 +1,31 @@
-import { render, screen, cleanup } from '@testing-library/react'
+import { render, screen, cleanup, fireEvent } from '@testing-library/react'
 import Button from './Button'
+import Home from '@/pages/index'
 
-afterEach(() => {
-  cleanup()
-})
+// unmount component after each test due to 'render'
+afterEach(cleanup)
 
 describe('Button Component', () => {
-  const setToggle = jest.fn()
-  render(<Button setToggle={setToggle} btnTitle="Click Here" />)
-  const button = screen.getByTestId('button')
-
+  /**
+   * Unit test
+   * Normally done with shallow rendering (requires Enzyme)
+   * Tests a component in isolation
+   */
   it('renders the button component', () => {
+    render(<Button />)
+    const button = screen.getByTestId('button')
     expect(button).toBeInTheDocument()
   })
 
-  it('displays the button title', () => {
-    expect(button).toHaveTextContent('Click Here')
+  /**
+   * Integration test
+   * Tests multiple components and component children
+   */
+  it('changes the state of the title prop on click', () => {
+    render(<Home />)
+    const button = screen.getByTestId('button')
+    expect(button).toHaveTextContent('This is a title')
+    fireEvent.click(button)
+    expect(button).toHaveTextContent('This is a different title')
   })
 })

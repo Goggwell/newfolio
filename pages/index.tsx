@@ -4,11 +4,18 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
 import useTranslation from 'next-translate/useTranslation'
+import Button from '@/components/Button/Button'
+import { useState } from 'react'
 
 const Home: NextPage = () => {
   const { t } = useTranslation('home')
   const description = t('description')
   const linkName = t('more-examples')
+
+  const [btnTitle, setBtnTitle] = useState('This is a title')
+  const changeBtnTitle = () => {
+    setBtnTitle('This is a different title')
+  }
 
   return (
     <div className={styles.container}>
@@ -31,6 +38,8 @@ const Home: NextPage = () => {
 
         <h2>{description}</h2>
         <p>{linkName}</p>
+
+        <Button title={btnTitle} onClick={changeBtnTitle} />
 
         <p className={styles.description}>
           Get started by editing{' '}
