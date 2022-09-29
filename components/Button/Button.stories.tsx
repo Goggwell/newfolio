@@ -9,6 +9,17 @@ export default {
     title: {
       description: 'Title of button',
     },
+    backgroundColor: {
+      control: 'color',
+    },
+    padding: {
+      control: {
+        type: 'range',
+        min: 1,
+        max: 30,
+        step: 1,
+      },
+    },
   },
 } as ComponentMeta<typeof Button>
 
@@ -17,5 +28,5 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
 export const Primary = Template.bind({})
 
 Primary.args = {
-  title: '',
+  title: 'Default',
 }
