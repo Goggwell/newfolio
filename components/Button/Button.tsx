@@ -1,4 +1,5 @@
 import React, { MouseEventHandler, ReactNode } from 'react'
+import styles from './Button.module.css'
 
 interface IButtonProps {
   onClick?: MouseEventHandler<HTMLButtonElement>
@@ -30,6 +31,7 @@ const Button = ({
     <button
       data-testid="button"
       onClick={onClick}
+      className={styles.button}
       style={{
         backgroundColor,
         padding: `${padding}px`,
