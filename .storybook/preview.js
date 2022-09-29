@@ -1,5 +1,21 @@
 import * as NextImage from 'next/image'
+import { styled } from '@storybook/theming'
 
+// Override default font
+const p = styled.p(({ theme }) => ({
+  fontFamily: '"Inter", sans-serif',
+}))
+const h1 = styled.h1(({ theme }) => ({
+  fontFamily: '"Inter", sans-serif',
+}))
+const div = styled.div(({ theme }) => ({
+  fontFamily: '"Inter", sans-serif',
+}))
+const span = styled.span(({ theme }) => ({
+  fontFamily: '"Inter", sans-serif',
+}))
+
+// Set media breakpoints
 const BREAKPOINTS_INT = {
   xs: 375,
   sm: 600,
@@ -40,4 +56,12 @@ export const parameters = {
     },
   },
   viewport: { viewports: customViewports },
+  docs: {
+    components: {
+      p: p,
+      div: div,
+      h1: h1,
+      span: span,
+    },
+  },
 }
