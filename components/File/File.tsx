@@ -30,6 +30,7 @@ const File = ({ name = 'GotG', image = '/gotg.jpg' }: IFile) => {
   return (
     <figure
       data-testid="file"
+      // adding extra class here just to satisfy the unit test (since original className will be obfuscated)
       className={clsx(styles.file, selected && `${styles.selected} selected`)}
       onClick={addSelectedState}
       onDoubleClick={removeSelectedState}
