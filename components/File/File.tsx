@@ -20,27 +20,19 @@ const File = ({ name = 'GotG', image = '/gotg.jpg' }: IFile) => {
   const [selected, setSelected] = useState(false)
 
   // change selected state of File component based on mouse clicks (single or double click)
-  const toggleSelected = (e: React.MouseEvent) => {
-    switch (e.detail) {
-      case 1: {
-        setSelected(true)
-        break
-      }
-      case 2: {
-        setSelected(false)
-        break
-      }
-      default: {
-        break
-      }
-    }
+  const addSelectedState = () => {
+    setSelected(true)
+  }
+  const removeSelectedState = () => {
+    setSelected(false)
   }
 
   return (
     <figure
       data-testid="file"
-      className={clsx(styles.file, selected && styles.selected)}
-      onClick={toggleSelected}
+      className={clsx(styles.file, selected && `${styles.selected} selected`)}
+      onClick={addSelectedState}
+      onDoubleClick={removeSelectedState}
     >
       <Image
         src={image}

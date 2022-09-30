@@ -5,17 +5,19 @@ import File from './File'
 afterEach(cleanup)
 
 describe('File Component', () => {
-  render(<File />)
-  const file = screen.getByTestId('file')
-
+  // NOTE: you must rerender for every 'it/test' function, because if you use the same one the component does not update
   it('renders the file component', () => {
+    render(<File />)
+    const file = screen.getByTestId('file')
     expect(file).toBeInTheDocument()
   })
 
   it('changes the state of the component based on clicks', () => {
+    render(<File />)
+    const file = screen.getByTestId('file')
     fireEvent.click(file)
     expect(file).toHaveClass('selected')
-    fireEvent.dblClick(file)
+    fireEvent.doubleClick(file)
     expect(file).not.toHaveClass('selected')
   })
 })
