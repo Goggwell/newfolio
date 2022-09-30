@@ -1,0 +1,57 @@
+import clsx from 'clsx'
+import React, { useState } from 'react'
+import Image from 'next/image'
+import styles from './File.module.css'
+
+export interface IFile {
+  name?: string
+  image?: string
+}
+
+/**
+ * File component
+ * @function File
+ * @param {MouseEventHandler<HTMLButtonElement>?} onClick - handler for button click events
+ * @param {string?} name - name of file
+ * @param {string?} image - image URL of file
+ * @returns {JSX.Element} - Rendered component
+ */
+const File = ({ name = 'GotG', image = '/gotg.jpg' }: IFile) => {
+  const [selected, setSelected] = useState(false)
+
+  // change selected state of File component based on mouse clicks (single or double click)
+  const toggleSelected = (e: React.MouseEvent) => {
+    switch (e.detail) {
+      case 1: {
+        setSelected(true)
+        break
+      }
+      case 2: {
+        setSelected(false)
+        break
+      }
+      default: {
+        break
+      }
+    }
+  }
+
+  return (
+    <figure
+      data-testid="file"
+      className={clsx(styles.file, selected && styles.selected)}
+      onClick={toggleSelected}
+    >
+      <Image
+        src={image}
+        alt="My GotG screenshot"
+        className={styles.file__icon}
+        width="70"
+        height="70"
+      />
+      <figcaption className={styles.file__name}>{name}</figcaption>
+    </figure>
+  )
+}
+
+export default File

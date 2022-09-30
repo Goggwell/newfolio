@@ -13,7 +13,7 @@ interface IButtonProps {
  * Standard button component
  * @function Button
  * @param {MouseEventHandler<HTMLButtonElement>?} onClick - handler for button click events
- * @param {string} title - title text of button (must put)
+ * @param {string?} title - title text of button
  * @param {ReactNode | JSX.Element?} children - HTML children to render
  * @param {string?} backgroundColor - background color of button
  * @param {number?} padding - space within the button and around the button's content

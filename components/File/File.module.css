@@ -1,0 +1,42 @@
+.file {
+  display: grid;
+  place-items: center;
+  width: fit-content;
+  max-width: 150px;
+  margin: 0;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.file__icon,
+.file__name {
+  pointer-events: none;
+}
+
+.file__icon {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.file__name {
+  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  color: black;
+  padding: 6px 10px;
+  text-align: center;
+}
+
+.file.selected {
+  outline: 2px dashed blue;
+  outline-offset: 8px;
+}
+
+.file.selected .file__icon {
+  background-color: blue;
+}
+
+.file.selected .file__name {
+  background-color: blue;
+}
