@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import React, { useState } from 'react'
 import Image from 'next/image'
-import styles from './File.module.css'
+import styles from './File.module.scss'
 
 export interface IFile {
   name?: string

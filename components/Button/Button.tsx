@@ -1,5 +1,5 @@
 import React, { MouseEventHandler, ReactNode } from 'react'
-import styles from './Button.module.css'
+import styles from './Button.module.scss'
 
 interface IButtonProps {
   onClick?: MouseEventHandler<HTMLButtonElement>
