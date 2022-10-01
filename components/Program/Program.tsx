@@ -1,6 +1,6 @@
 import Draggable from 'react-draggable'
 import clsx from 'clsx'
-import styles from './Program.module.css'
+import styles from './Program.module.scss'
 import { ReactNode, useState } from 'react'
 
 export interface IProgram {

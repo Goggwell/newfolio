@@ -39,8 +39,8 @@ const File = ({ name = 'GotG', image = '/gotg.jpg' }: IFile) => {
         src={image}
         alt="My GotG screenshot"
         className={styles.file__icon}
-        width="70"
-        height="70"
+        width="80"
+        height="80"
       />
       <figcaption className={styles.file__name}>{name}</figcaption>
     </figure>
