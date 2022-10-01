@@ -1,0 +1,53 @@
+.program {
+  position: absolute;
+  width: 100%;
+  max-width: 900px;
+  height: 100%;
+  max-height: 500px;
+  background-color: lightpink;
+  overflow: hidden;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.program__toolbar {
+  margin: 0;
+  padding: 0;
+  background-color: deeppink;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.program__toolbar__icon,
+.program__toolbar__title {
+  font-size: 16px;
+  color: black;
+  padding: 10px;
+  list-style: none;
+}
+
+.program__toolbar__icon {
+  width: 20px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.program__toolbar__title {
+  text-transform: uppercase;
+  text-align: center;
+  pointer-events: none;
+}
+
+.program__content {
+  display: block;
+  border: none;
+  outline: none;
+  background: transparent;
+  width: calc(100% - 20px);
+  height: calc(100% - 61px);
+  overflow: hidden;
+  padding: 10px;
+}
