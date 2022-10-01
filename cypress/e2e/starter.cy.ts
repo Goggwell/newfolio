@@ -11,21 +11,21 @@
 // please read our getting started guide:
 // https://on.cypress.io/introduction-to-cypress
 
-describe('Navigation', () => {
-  it('should navigate to the about page', () => {
-    // start from index page
-    cy.visit('http://localhost:3000/')
+// describe('Navigation', () => {
+//   it('should navigate to the about page', () => {
+//     // start from index page
+//     cy.visit('http://localhost:3000/')
 
-    // find link with href attribute containing 'about' and click it
-    cy.get('a[href*="about"]').click()
+//     // find link with href attribute containing 'about' and click it
+//     cy.get('a[href*="about"]').click()
 
-    // new url should include "/about"
-    cy.url().should('include', '/about')
+//     // new url should include "/about"
+//     cy.url().should('include', '/about')
 
-    // new page should contain h1 with text "About Me"
-    cy.get('h1').contains('About Me')
-  })
-})
+//     // new page should contain h1 with text "About Me"
+//     cy.get('h1').contains('About Me')
+//   })
+// })
 
 // prevent TypeScript from reading as legacy script
 export {}
