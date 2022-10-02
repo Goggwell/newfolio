@@ -1,8 +1,9 @@
-/** @type {import('next').NextConfig} */
-const nextTranslate = require('next-translate')
 const path = require('path')
+const withPwa = require('next-pwa')({
+  dest: 'public',
+})
 
-module.exports = nextTranslate({
+module.exports = withPwa({
   reactStrictMode: true,
   swcMinify: true,
   sassOptions: {
@@ -17,5 +18,11 @@ module.exports = nextTranslate({
     })
 
     return config
+  },
+  pwa: {
+    dest: 'public',
+    register: true,
+    skipWaiting: true,
+    disable: process.env.NODE_ENV === 'development',
   },
 })

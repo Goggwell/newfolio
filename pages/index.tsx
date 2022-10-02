@@ -69,7 +69,10 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <Head>
         <title>Samuel&apos;s Portfolio</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="viewport"
+          content="minimum-scale=1.0, initial-scale=1.0, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
+        />
       </Head>
       <main className={styles.main}>
         <FileGrid>
