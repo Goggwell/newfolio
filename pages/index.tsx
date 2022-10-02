@@ -5,6 +5,7 @@ import File from '@/components/File/File'
 import Program from '@/components/Program/Program'
 import Taskbar from '@/components/Taskbar/Taskbar'
 import TaskbarItem from '@/components/TaskbarItem/TaskbarItem'
+import Clock from '@/components/Clock/Clock'
 import Head from 'next/head'
 
 const files = {
@@ -28,14 +29,15 @@ const Home: NextPage = () => {
             return <File key={key} name={key} />
           })}
         </FileGrid>
-        <Program name="Test App">
-          <h1>This is a test program that will be changed later.</h1>
-        </Program>
         <Taskbar>
           {Object.keys(files).map((key) => {
             return <TaskbarItem key={key} name={key} />
           })}
         </Taskbar>
+        <Clock />
+        <Program name="Test App">
+          <h1>This is a test program that will be changed later.</h1>
+        </Program>
       </main>
     </div>
   )
