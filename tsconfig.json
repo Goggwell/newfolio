@@ -18,7 +18,8 @@
     "paths": {
       "@/components/*": ["components/*"],
       "@/pages/*": ["pages/*"],
-      "@/styles/*": ["styles/*"]
+      "@/styles/*": ["styles/*"],
+      "@icons/*": ["public/icons/*"]
     },
     "types": ["node", "jest", "@testing-library/jest-dom"]
   },

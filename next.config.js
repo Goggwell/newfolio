@@ -9,4 +9,13 @@ module.exports = nextTranslate({
     includePaths: [path.join(__dirname), 'styles'],
     prependData: `@import "variables.module.scss";`,
   },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.svg$/i,
+      issuer: /\.[jt]sx?$/,
+      use: ['@svgr/webpack'],
+    })
+
+    return config
+  },
 })
