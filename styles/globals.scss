@@ -17,11 +17,73 @@ a {
 // CSS VARIABLES (required for next-themes)
 // ---------------------------------------------
 
-:root {
+:root,
+[data-theme='dark'] {
   --bg-color: #000;
+  --bg-rgb-color: 0, 0, 0;
   --text-color: #f0eff4;
   --dot-color: 240, 239, 244;
   --program-outline-color: #da4167;
   --program-color: #3d2645;
   --select-color: #832161;
+}
+
+[data-theme='coquelicot'] {
+  --bg-color: #191919;
+  --bg-rgb-color: 25, 25, 25;
+  --text-color: #fff;
+  --dot-color: 255, 255, 255;
+  --program-outline-color: #f15025;
+  --program-color: #f15025;
+  --select-color: #f15025;
+}
+
+[data-theme='vice'] {
+  --bg-color: #0c0931;
+  --bg-rgb-color: 12, 9, 49;
+  --text-color: #00cfe5;
+  --dot-color: 0, 207, 229;
+  --program-outline-color: #e80074;
+  --program-color: #1d1856;
+  --select-color: #c200db;
+}
+
+[data-theme='nostalgia'] {
+  --bg-color: #a653f5;
+  --bg-rgb-color: 166, 83, 245;
+  --text-color: #65b8bf;
+  --dot-color: 101, 184, 191;
+  --program-outline-color: #fa92fb;
+  --program-color: #8f8cf2;
+  --select-color: #f96cff;
+}
+
+[data-theme='forest'] {
+  --bg-color: #5cdb95;
+  --bg-rgb-color: 92, 219, 149;
+  --text-color: #edf5e1;
+  --dot-color: 237, 245, 225;
+  --program-outline-color: #379683;
+  --program-color: #05386b;
+  --select-color: #05386b;
+}
+
+[data-theme='lab'] {
+  --bg-color: #2c3531;
+  --bg-rgb-color: 44, 53, 49;
+  --text-color: #d1e8e2;
+  --dot-color: 209, 232, 226;
+  --program-outline-color: #ffcb9a;
+  --program-color: #116466;
+  --select-color: #d9b08c;
+}
+
+[data-theme='zomp'] {
+  --bg-color: #0a2342;
+  --bg-rgb-color: 10, 35, 66;
+  --text-color: #fffdf7;
+  --dot-color: 255, 253, 247;
+  --program-outline-color: #2ca58d;
+  --program-color: #84bc9c;
+  --select-color: #f46197;
 }
