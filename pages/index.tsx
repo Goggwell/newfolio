@@ -6,6 +6,7 @@ import Program from '@/components/Program/Program'
 import Taskbar from '@/components/Taskbar/Taskbar'
 import TaskbarItem from '@/components/TaskbarItem/TaskbarItem'
 import Clock from '@/components/Clock/Clock'
+import ThemeProgram from '@/components/ThemeProgram/ThemeProgram'
 import Head from 'next/head'
 import { useState } from 'react'
 
@@ -107,7 +108,7 @@ const Home: NextPage = () => {
           return (
             file.isOpen && (
               <Program name={file.name} onClose={() => closeProgram(index)}>
-                <h1>This is a test program that will be changed later.</h1>
+                {file.name === 'Themes' && <ThemeProgram />}
               </Program>
             )
           )
