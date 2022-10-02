@@ -1,12 +1,11 @@
-.file {
+.taskbarItem {
   display: grid;
   place-items: center;
-  width: fit-content;
-  max-width: 150px;
+  width: 125px;
   margin: 0;
-  cursor: pointer;
   gap: 10px;
-  $file: &;
+  cursor: pointer;
+  $item: &;
 
   &__icon,
   &__name {
@@ -25,17 +24,6 @@
     font-family: 'JetBrains Mono', monospace;
     font-weight: 300;
     color: $text-color;
-    padding: 6px 10px;
     text-align: center;
-  }
-
-  &.selected {
-    outline: 2px dashed $select-color;
-    outline-offset: 8px;
-
-    #{ $file }__icon,
-    #{ $file }__name {
-      background-color: $select-color;
-    }
   }
 }

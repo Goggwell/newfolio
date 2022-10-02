@@ -6,17 +6,14 @@ import styles from './File.module.scss'
 export interface IFile {
   name?: string
   image?: string
+  alt?: string
 }
 
-/**
- * File component
- * @function File
- * @param {MouseEventHandler<HTMLButtonElement>?} onClick - handler for button click events
- * @param {string?} name - name of file
- * @param {string?} image - image URL of file
- * @returns {JSX.Element} - Rendered component
- */
-const File = ({ name = 'GotG', image = '/gotg.jpg' }: IFile) => {
+const File = ({
+  name = 'GotG',
+  image = '/gotg.jpg',
+  alt = 'My GotG screenshot',
+}: IFile) => {
   const [selected, setSelected] = useState(false)
 
   // change selected state of File component based on mouse clicks (single or double click)
@@ -37,7 +34,7 @@ const File = ({ name = 'GotG', image = '/gotg.jpg' }: IFile) => {
     >
       <Image
         src={image}
-        alt="My GotG screenshot"
+        alt={alt}
         className={styles.file__icon}
         width="80"
         height="80"

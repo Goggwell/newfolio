@@ -2,6 +2,7 @@
   width: 100vw;
   height: 100vh;
   display: block;
+  overflow: hidden;
 }
 
 .main {
@@ -11,7 +12,8 @@
   display: block;
   background: $bg-color;
   background-image: radial-gradient(rgba($dot-color, 0.1) 1px, transparent 0);
-  background-size: 20px 20px;
+  background-size: $dot-space $dot-space;
+  overflow: hidden;
 }
 
 @media (max-width: 600px) {

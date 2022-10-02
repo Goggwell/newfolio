@@ -3,6 +3,8 @@ import styles from '@/styles/Home.module.scss'
 import FileGrid from '@/components/FileGrid/FileGrid'
 import File from '@/components/File/File'
 import Program from '@/components/Program/Program'
+import Taskbar from '@/components/Taskbar/Taskbar'
+import TaskbarItem from '@/components/TaskbarItem/TaskbarItem'
 import Head from 'next/head'
 
 const files = {
@@ -29,6 +31,11 @@ const Home: NextPage = () => {
         <Program name="Test App">
           <h1>This is a test program that will be changed later.</h1>
         </Program>
+        <Taskbar>
+          {Object.keys(files).map((key) => {
+            return <TaskbarItem key={key} name={key} />
+          })}
+        </Taskbar>
       </main>
     </div>
   )
