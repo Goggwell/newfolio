@@ -2,8 +2,8 @@ import React, { MouseEventHandler, ReactNode, useState } from 'react'
 import Draggable from 'react-draggable'
 import clsx from 'clsx'
 import styles from './Program.module.scss'
-import Minimize from '@icons/minimize-2.svg'
-import Close from '@icons/x.svg'
+import MinimizeIcon from '../Icons/MinimizeIcon'
+import CloseIcon from '../Icons/CloseIcon'
 
 export interface IProgram {
   name?: string
@@ -42,11 +42,11 @@ const Program = ({ name, children, onClose }: IProgram) => {
             className={styles.program__toolbar__icon}
             onClick={handleMinimize}
           >
-            <Minimize />
+            <MinimizeIcon />
           </li>
           <li className={styles.program__toolbar__title}>{name}</li>
           <li className={styles.program__toolbar__icon} onClick={onClose}>
-            <Close />
+            <CloseIcon />
           </li>
         </menu>
         <dialog className={styles.program__content}>{children}</dialog>

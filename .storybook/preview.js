@@ -1,5 +1,6 @@
 import * as NextImage from 'next/image'
 import { styled } from '@storybook/theming'
+import '../styles/globals.scss'
 
 // Override default font
 const p = styled.p(({ theme }) => ({

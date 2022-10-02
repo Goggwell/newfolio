@@ -3,9 +3,9 @@ import React, { MouseEventHandler, useEffect, useState } from 'react'
 import styles from './File.module.scss'
 
 // icons
-import Folder from '@icons/folder.svg'
-import Experience from '@icons/briefcase.svg'
-import Contact from '@icons/mail.svg'
+import FolderIcon from '../Icons/FolderIcon'
+import ExperienceIcon from '../Icons/ExperienceIcon'
+import ContactIcon from '../Icons/ContactIcon'
 
 export interface IFile {
   name?: string
@@ -28,9 +28,9 @@ const File = ({ name = 'About', onClick, isSelected }: IFile) => {
       onClick={onClick}
     >
       <i className={styles.file__icon}>
-        {name === 'About' && <Folder />}
-        {name === 'Experience' && <Experience />}
-        {name === 'Contact' && <Contact />}
+        {name === 'About' && <FolderIcon />}
+        {name === 'Experience' && <ExperienceIcon />}
+        {name === 'Contact' && <ContactIcon />}
       </i>
       <figcaption className={styles.file__name}>{name}</figcaption>
     </figure>
