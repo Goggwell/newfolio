@@ -1,8 +1,11 @@
 import { IFile } from './File'
 
+let selected = false
+
 const base: IFile = {
-  name: 'GotG',
-  image: '/gotg.jpg',
+  name: 'Folder',
+  onClick: () => (selected = !selected),
+  isSelected: selected,
 }
 
 export const mockFileProps = {

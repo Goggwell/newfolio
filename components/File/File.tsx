@@ -1,44 +1,37 @@
 import clsx from 'clsx'
-import React, { useState } from 'react'
-import Image from 'next/image'
+import React, { MouseEventHandler, useEffect, useState } from 'react'
 import styles from './File.module.scss'
+
+// icons
+import Folder from '@icons/folder.svg'
+import Experience from '@icons/briefcase.svg'
+import Contact from '@icons/mail.svg'
 
 export interface IFile {
   name?: string
-  image?: string
-  alt?: string
+  onClick?: MouseEventHandler<HTMLElement>
+  isSelected?: boolean
 }
 
-const File = ({
-  name = 'GotG',
-  image = '/gotg.jpg',
-  alt = 'My GotG screenshot',
-}: IFile) => {
-  const [selected, setSelected] = useState(false)
+const File = ({ name = 'About', onClick, isSelected }: IFile) => {
+  const [selected, setSelected] = useState(isSelected)
 
-  // change selected state of File component based on mouse clicks (single or double click)
-  const addSelectedState = () => {
-    setSelected(true)
-  }
-  const removeSelectedState = () => {
-    setSelected(false)
-  }
+  useEffect(() => {
+    setSelected(isSelected)
+  }, [isSelected])
 
   return (
     <figure
       data-testid="file"
       // adding extra class here just to satisfy the unit test (since original className will be obfuscated)
       className={clsx(styles.file, selected && `${styles.selected} selected`)}
-      onClick={addSelectedState}
-      onDoubleClick={removeSelectedState}
+      onClick={onClick}
     >
-      <Image
-        src={image}
-        alt={alt}
-        className={styles.file__icon}
-        width="80"
-        height="80"
-      />
+      <i className={styles.file__icon}>
+        {name === 'About' && <Folder />}
+        {name === 'Experience' && <Experience />}
+        {name === 'Contact' && <Contact />}
+      </i>
       <figcaption className={styles.file__name}>{name}</figcaption>
     </figure>
   )

@@ -1,16 +1,17 @@
 import Draggable from 'react-draggable'
 import clsx from 'clsx'
 import styles from './Program.module.scss'
-import { ReactNode, useState } from 'react'
+import { MouseEventHandler, ReactNode, useState } from 'react'
 import Minimize from '@icons/minimize-2.svg'
 import Close from '@icons/x.svg'
 
 export interface IProgram {
   name?: string
   children?: ReactNode | JSX.Element
+  onClose?: MouseEventHandler<HTMLLIElement>
 }
 
-const Program = ({ name, children }: IProgram) => {
+const Program = ({ name, children, onClose }: IProgram) => {
   // key identifier for test purposes (since we can't read element pos)
   const [dragKey, setDragKey] = useState(false)
   const [minimized, setMinimized] = useState(false)
@@ -24,12 +25,7 @@ const Program = ({ name, children }: IProgram) => {
   }
 
   return (
-    <Draggable
-      defaultPosition={{ x: 0, y: 0 }}
-      handle=".toolbar"
-      onDrag={handleDrag}
-      bounds="parent"
-    >
+    <Draggable handle=".toolbar" onDrag={handleDrag} bounds="parent">
       <aside
         data-testid="program"
         className={clsx(
@@ -49,7 +45,7 @@ const Program = ({ name, children }: IProgram) => {
             <Minimize />
           </li>
           <li className={styles.program__toolbar__title}>{name}</li>
-          <li className={styles.program__toolbar__icon}>
+          <li className={styles.program__toolbar__icon} onClick={onClose}>
             <Close />
           </li>
         </menu>
