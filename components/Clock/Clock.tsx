@@ -5,6 +5,9 @@ const Clock = () => {
   const [time, setTime] = useState('')
 
   useEffect(() => {
+    // initDate so that clock renders instantly instead of waiting 1 second to render
+    const initDate = new Date()
+    setTime(initDate.toLocaleTimeString())
     setInterval(() => {
       const date = new Date()
       setTime(date.toLocaleTimeString())
