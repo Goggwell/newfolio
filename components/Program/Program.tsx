@@ -21,6 +21,7 @@ const Program = ({ name, children }: IProgram) => {
       defaultPosition={{ x: 0, y: 0 }}
       handle=".toolbar"
       onDrag={handleDrag}
+      bounds="parent"
     >
       <aside
         data-testid="program"
