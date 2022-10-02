@@ -22,6 +22,10 @@
     display: grid;
     place-items: center;
     object-fit: cover;
+
+    svg {
+      stroke: $text-color;
+    }
   }
 
   &__name {

@@ -2,12 +2,12 @@
 // --------------
 
 // colors
-$bg-color: #000;
-$text-color: #f0eff4;
-$dot-color: #f0eff4;
-$program-outline-color: #da4167;
-$program-color: #3d2645;
-$select-color: #832161;
+$bg-color: var(--bg-color);
+$text-color: var(--text-color);
+$dot-color: var(--dot-color);
+$program-outline-color: var(--program-outline-color);
+$program-color: var(--program-color);
+$select-color: var(--select-color);
 
 // sizes
 $dot-size: 1px;

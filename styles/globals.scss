@@ -14,12 +14,14 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+// CSS VARIABLES (required for next-themes)
+// ---------------------------------------------
+
+:root {
+  --bg-color: #000;
+  --text-color: #f0eff4;
+  --dot-color: 240, 239, 244;
+  --program-outline-color: #da4167;
+  --program-color: #3d2645;
+  --select-color: #832161;
 }
