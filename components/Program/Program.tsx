@@ -1,7 +1,7 @@
+import React, { MouseEventHandler, ReactNode, useState } from 'react'
 import Draggable from 'react-draggable'
 import clsx from 'clsx'
 import styles from './Program.module.scss'
-import { MouseEventHandler, ReactNode, useState } from 'react'
 import Minimize from '@icons/minimize-2.svg'
 import Close from '@icons/x.svg'
 
