@@ -1,0 +1,14 @@
+@import '../../styles/variables.module.scss';
+
+.fileGrid {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  grid-auto-rows: minmax(125px, auto);
+  top: 0;
+  left: 0;
+  margin: 40px;
+  margin-top: 60px;
+}

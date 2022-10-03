@@ -1,0 +1,39 @@
+@import './variables.module.scss';
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  overflow: hidden;
+}
+
+.main {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background: $bg-color;
+  background-image: radial-gradient(rgba($dot-color, 0.1) 1px, transparent 0);
+  background-size: $dot-space $dot-space;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .card,
+  .footer {
+    border-color: #222;
+  }
+  .code {
+    background: #111;
+  }
+  .logo img {
+    filter: invert(1);
+  }
+}
