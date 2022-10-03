@@ -19,7 +19,10 @@
       "@/components/*": ["components/*"],
       "@/pages/*": ["pages/*"],
       "@/styles/*": ["styles/*"],
-      "@icons/*": ["public/icons/*"]
+      "@icons/*": ["public/icons/*"],
+      "@/utils/*": ["utils/*"],
+      "@/env/*": ["env/*"],
+      "@/server/*": ["server/*"]
     },
     "types": ["node", "jest", "@testing-library/jest-dom"]
   },
