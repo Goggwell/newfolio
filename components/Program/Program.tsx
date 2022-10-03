@@ -9,9 +9,10 @@ export interface IProgram {
   name?: string
   children?: ReactNode | JSX.Element
   onClose?: MouseEventHandler<HTMLLIElement>
+  maxWidth?: number
 }
 
-const Program = ({ name, children, onClose }: IProgram) => {
+const Program = ({ name, children, onClose, maxWidth = 900 }: IProgram) => {
   // key identifier for test purposes (since we can't read element pos)
   const [dragKey, setDragKey] = useState(false)
   const [minimized, setMinimized] = useState(false)
@@ -33,6 +34,9 @@ const Program = ({ name, children, onClose }: IProgram) => {
           dragKey && `dragged`,
           minimized && `${styles.minimized} minimized`
         )}
+        style={{
+          maxWidth: `${maxWidth}px`,
+        }}
       >
         <menu
           data-testid="toolbar"
