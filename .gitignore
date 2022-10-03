@@ -12,6 +12,10 @@
 /.next/
 /out/
 
+# prisma db
+/prisma/db.sqlite
+/prisma/db.sqlite-journal
+
 # production
 /build
 
@@ -26,6 +30,7 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
+.env
 .env*.local
 
 # vercel
