@@ -1,16 +1,7 @@
 import { MouseEventHandler, useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 import styles from './ThemeProgram.module.scss'
-
-const themes = [
-  { name: 'Dark' },
-  { name: 'Coquelicot' },
-  { name: 'Vice' },
-  { name: 'Nostalgia' },
-  { name: 'Forest' },
-  { name: 'Lab' },
-  { name: 'Zomp' },
-]
+import { themesData } from 'data/themes'
 
 export interface IThemeItem {
   themeName?: string
@@ -42,7 +33,7 @@ const ThemeProgram = () => {
     // setting defaultValue to theme to avoid no-unused-vars error since we aren't using it
     <section className={styles.themeProgram} defaultValue={theme}>
       <h3 className={styles.themeProgram__title}>Select Theme</h3>
-      {themes.map((theme) => (
+      {themesData.map((theme) => (
         <ThemeItem
           themeName={theme.name}
           key={theme.name.toLowerCase()}
