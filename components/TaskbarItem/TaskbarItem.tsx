@@ -4,6 +4,7 @@ import styles from './TaskbarItem.module.scss'
 import BlogIcon from '../Icons/BlogIcon'
 import ChatIcon from '../Icons/ChatIcon'
 import SlidersIcon from '../Icons/SlidersIcon'
+import FeedIcon from '../Icons/FeedIcon'
 import { MouseEventHandler } from 'react'
 
 export interface ITaskbarItem {
@@ -18,6 +19,7 @@ const TaskbarItem = ({ name = 'Blog', onClick }: ITaskbarItem) => {
         {name === 'Blog' && <BlogIcon />}
         {name === 'Chat' && <ChatIcon />}
         {name === 'Themes' && <SlidersIcon />}
+        {name === 'Feed' && <FeedIcon />}
       </i>
       <span className={styles.taskbarItem__name}>{name}</span>
     </li>

@@ -7,6 +7,7 @@ import Taskbar from '@/components/Taskbar/Taskbar'
 import TaskbarItem from '@/components/TaskbarItem/TaskbarItem'
 import Clock from '@/components/Clock/Clock'
 import ThemeProgram from '@/components/ThemeProgram/ThemeProgram'
+import FeedProgram from '@/components/FeedProgram/FeedProgram'
 import { programsData } from 'data/programs'
 import Head from 'next/head'
 import { useState } from 'react'
@@ -77,6 +78,7 @@ const Home: NextPage = () => {
                 onClose={() => closeProgram(index)}
               >
                 {file.name === 'Themes' && <ThemeProgram />}
+                {file.name === 'Feed' && <FeedProgram />}
               </Program>
             )
           )

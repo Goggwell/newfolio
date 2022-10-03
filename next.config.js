@@ -1,6 +1,7 @@
-import { env } from './src/env/server.mjs'
 const path = require('path')
-const withPwa = require('next-pwa')
+const withPwa = require('next-pwa')({
+  dest: 'public',
+})
 
 module.exports = withPwa({
   reactStrictMode: true,
