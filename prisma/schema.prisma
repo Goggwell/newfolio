@@ -63,7 +63,7 @@ model VerificationToken {
     @@unique([identifier, token])
 }
 
-model Guestbook {
+model Feed {
     id            String    @id @default(cuid())
     createdAt     DateTime  @default(now())
     name          String
