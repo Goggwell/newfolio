@@ -8,11 +8,21 @@ import TaskbarItem from '@/components/TaskbarItem/TaskbarItem'
 import Clock from '@/components/Clock/Clock'
 import ThemeProgram from '@/components/ThemeProgram/ThemeProgram'
 import FeedProgram from '@/components/FeedProgram/FeedProgram'
+import JournalProgram from '@/components/JournalProgram/JournalProgram'
 import { programsData } from 'data/programs'
 import Head from 'next/head'
 import { useState } from 'react'
+import { compareDesc } from 'date-fns'
+import { allPosts, Post } from 'contentlayer/generated'
 
-const Home: NextPage = () => {
+export async function getStaticProps() {
+  const posts: Post[] = allPosts.sort((a, b) => {
+    return compareDesc(new Date(a.date), new Date(b.date))
+  })
+  return { props: { posts } }
+}
+
+const Home: NextPage = ({ posts }: { posts?: Post[] }) => {
   const [files, setFiles] = useState(programsData)
 
   const openProgram = (value: number) => {
@@ -79,6 +89,7 @@ const Home: NextPage = () => {
               >
                 {file.name === 'Themes' && <ThemeProgram />}
                 {file.name === 'Feed' && <FeedProgram />}
+                {file.name === 'Journal' && <JournalProgram posts={posts} />}
               </Program>
             )
           )

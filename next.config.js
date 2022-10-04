@@ -1,4 +1,5 @@
 const path = require('path')
+const { withContentlayer } = require('next-contentlayer')
 const withPwa = require('next-pwa')({
   dest: 'public',
   register: true,
@@ -6,7 +7,8 @@ const withPwa = require('next-pwa')({
   disable: process.env.NODE_ENV === 'development',
 })
 
-module.exports = withPwa({
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   sassOptions: {
@@ -22,4 +24,6 @@ module.exports = withPwa({
 
     return config
   },
-})
+}
+
+module.exports = withContentlayer(withPwa(nextConfig))
