@@ -1,5 +1,5 @@
 import { signIn, signOut, useSession } from 'next-auth/react'
-import { useState, Suspense, Key } from 'react'
+import { useState, Suspense } from 'react'
 import { trpc } from '@/utils/trpc'
 import FeedItem from '@/components/FeedItem/FeedItem'
 import styles from './FeedProgram.module.scss'
@@ -63,25 +63,16 @@ const FeedProgram = () => {
         </>
       )}
       <Suspense fallback={null}>
-        {messages?.map(
-          (
-            msg: {
-              name?: string
-              message?: string
-              createdAt?: Date
-            },
-            index?: Key
-          ) => {
-            return (
-              <FeedItem
-                key={index}
-                name={msg.name}
-                message={msg.message}
-                createdAt={msg.createdAt}
-              />
-            )
-          }
-        )}
+        {messages?.map((msg, index) => {
+          return (
+            <FeedItem
+              key={index}
+              name={msg.name}
+              message={msg.message}
+              createdAt={msg.createdAt}
+            />
+          )
+        })}
       </Suspense>
     </section>
   )
