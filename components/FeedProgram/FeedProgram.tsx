@@ -57,7 +57,10 @@ const FeedProgram = () => {
           </form>
         </div>
       ) : (
-        <button onClick={() => signIn('discord')}>Login with Discord</button>
+        <>
+          <button onClick={() => signIn('discord')}>Login with Discord</button>
+          <button onClick={() => signIn('github')}>Login with GitHub</button>
+        </>
       )}
       <Suspense fallback={null}>
         {messages?.map((msg, index) => {
