@@ -14,7 +14,7 @@ export const programsData = [
     maxWidth: 900,
   },
   {
-    name: 'Blog',
+    name: 'Journal',
     isTask: true,
     isOpen: false,
     isSelected: false,
