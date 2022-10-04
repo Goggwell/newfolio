@@ -60,9 +60,16 @@ const FeedProgram = () => {
         <button onClick={() => signIn('discord')}>Login with Discord</button>
       )}
       {messages?.map((msg, index) => {
+        console.log(msg.createdAt)
+
         return (
           !isLoading && (
-            <FeedItem key={index} name={msg.name} message={msg.message} />
+            <FeedItem
+              key={index}
+              name={msg.name}
+              message={msg.message}
+              createdAt={msg.createdAt}
+            />
           )
         )
       })}
