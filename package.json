@@ -13,6 +13,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "prepare": "husky install",
+    "preinstall": "npx only-allow pnpm",
     "postinstall": "prisma generate"
   },
   "husky": {
