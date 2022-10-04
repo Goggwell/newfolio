@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, ReactNode, useState } from 'react'
+import React, { MouseEventHandler, ReactNode, useState, useRef } from 'react'
 import Draggable from 'react-draggable'
 import clsx from 'clsx'
 import styles from './Program.module.scss'
@@ -16,6 +16,7 @@ const Program = ({ name, children, onClose, maxWidth = 900 }: IProgram) => {
   // key identifier for test purposes (since we can't read element pos)
   const [dragKey, setDragKey] = useState(false)
   const [minimized, setMinimized] = useState(false)
+  const programRef = useRef<HTMLElement>(null)
 
   const handleDrag = () => {
     setDragKey(true)
@@ -25,10 +26,26 @@ const Program = ({ name, children, onClose, maxWidth = 900 }: IProgram) => {
     setMinimized(!minimized)
   }
 
+  const handleMouseDown = () => {
+    const programs = document.querySelectorAll<HTMLElement>('.react-draggable')
+    if (programRef.current) {
+      programs.forEach((program) => {
+        program.style.zIndex = '0'
+      })
+      programRef.current.style.zIndex = '1'
+    }
+  }
+
   return (
-    <Draggable handle=".toolbar" onDrag={handleDrag} bounds="parent">
+    <Draggable
+      handle=".toolbar"
+      onDrag={handleDrag}
+      onMouseDown={handleMouseDown}
+      bounds="parent"
+    >
       <aside
         data-testid="program"
+        ref={programRef}
         className={clsx(
           styles.program,
           dragKey && `dragged`,
