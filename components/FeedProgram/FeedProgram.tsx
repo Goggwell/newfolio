@@ -1,11 +1,11 @@
 import { signIn, signOut, useSession } from 'next-auth/react'
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
 import { trpc } from '@/utils/trpc'
 import FeedItem from '@/components/FeedItem/FeedItem'
 import styles from './FeedProgram.module.scss'
 
 const FeedProgram = () => {
-  const { data: messages, isLoading } = trpc.useQuery(['feed.getAll'])
+  const { data: messages } = trpc.useQuery(['feed.getAll'])
   const { data: session, status } = useSession()
   const [message, setMessage] = useState('')
   const ctx = trpc.useContext()
@@ -59,11 +59,9 @@ const FeedProgram = () => {
       ) : (
         <button onClick={() => signIn('discord')}>Login with Discord</button>
       )}
-      {messages?.map((msg, index) => {
-        console.log(msg.createdAt)
-
-        return (
-          !isLoading && (
+      <Suspense fallback={null}>
+        {messages?.map((msg, index) => {
+          return (
             <FeedItem
               key={index}
               name={msg.name}
@@ -71,8 +69,8 @@ const FeedProgram = () => {
               createdAt={msg.createdAt}
             />
           )
-        )
-      })}
+        })}
+      </Suspense>
     </section>
   )
 }
