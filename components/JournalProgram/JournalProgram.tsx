@@ -1,18 +1,7 @@
-import { format, parseISO } from 'date-fns'
 import { Post } from 'contentlayer/generated'
 import styles from './JournalProgram.module.scss'
-import { useState } from 'react'
-
-const JournalEntryListItem = (post: Post) => {
-  return (
-    <li>
-      <time dateTime={post.date}>
-        {format(parseISO(post.date), 'LLLL d, yyyy')}
-      </time>
-      <span>{post.title}</span>
-    </li>
-  )
-}
+import React, { useState } from 'react'
+import JournalEntryListItem from '../JournalEntryListItem/JournalEntryListItem'
 
 const JournalProgram = ({ posts }: { posts?: Post[] }) => {
   const [entryID, setEntryID] = useState('')
