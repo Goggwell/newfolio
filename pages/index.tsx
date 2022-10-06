@@ -2,10 +2,8 @@ import type { NextPage } from 'next'
 import styles from '@/styles/Home.module.scss'
 import FileGrid from '@/components/FileGrid/FileGrid'
 import File from '@/components/File/File'
-import Program from '@/components/Program/Program'
 import Taskbar from '@/components/Taskbar/Taskbar'
 import TaskbarItem from '@/components/TaskbarItem/TaskbarItem'
-import Clock from '@/components/Clock/Clock'
 import ThemeProgram from '@/components/ThemeProgram/ThemeProgram'
 import FeedProgram from '@/components/FeedProgram/FeedProgram'
 import JournalProgram from '@/components/JournalProgram/JournalProgram'
@@ -14,6 +12,13 @@ import Head from 'next/head'
 import { useState } from 'react'
 import { compareDesc } from 'date-fns'
 import { allPosts, Post } from 'contentlayer/generated'
+import dynamic from 'next/dynamic'
+
+const DynamicProgram = dynamic(() => import('@/components/Program/Program'))
+
+const DynamicClock = dynamic(() => import('@/components/Clock/Clock'), {
+  ssr: false,
+})
 
 export async function getStaticProps() {
   const posts: Post[] = allPosts.sort((a, b) => {
@@ -78,11 +83,11 @@ const Home: NextPage = ({ posts }: { posts?: Post[] }) => {
             )
           })}
         </Taskbar>
-        <Clock />
+        <DynamicClock />
         {files.map((file, index) => {
           return (
             file.isOpen && (
-              <Program
+              <DynamicProgram
                 name={file.name}
                 maxWidth={file.maxWidth}
                 onClose={() => closeProgram(index)}
@@ -90,7 +95,7 @@ const Home: NextPage = ({ posts }: { posts?: Post[] }) => {
                 {file.name === 'Themes' && <ThemeProgram />}
                 {file.name === 'Feed' && <FeedProgram />}
                 {file.name === 'Journal' && <JournalProgram posts={posts} />}
-              </Program>
+              </DynamicProgram>
             )
           )
         })}
