@@ -1,10 +1,14 @@
 const path = require('path')
+const withPlugins = require('next-compose-plugins')
 const { withContentlayer } = require('next-contentlayer')
 const withPwa = require('next-pwa')({
   dest: 'public',
   register: true,
   skipWaiting: true,
   disable: process.env.NODE_ENV === 'development',
+})
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
 })
 
 /** @type {import('next').NextConfig} */
@@ -26,4 +30,7 @@ const nextConfig = {
   },
 }
 
-module.exports = withContentlayer(withPwa(nextConfig))
+module.exports = withPlugins(
+  [[withBundleAnalyzer], [withContentlayer], [withPwa]],
+  nextConfig
+)
