@@ -1,6 +1,6 @@
 import { render, screen, cleanup, fireEvent } from '@testing-library/react'
 import File from './File'
-import Home from '@/pages/index'
+import TestHome from '@/components/TestHome/TestHome'
 
 // unmount component after each test due to 'render'
 afterEach(cleanup)
@@ -14,7 +14,7 @@ describe('File Component', () => {
   })
 
   it('changes the state of the component based on clicks', () => {
-    render(<Home />)
+    render(<TestHome />)
     const file = screen.getAllByTestId('file')[0]
     fireEvent.click(file)
     expect(file).toHaveClass('selected')

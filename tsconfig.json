@@ -22,11 +22,19 @@
       "@icons/*": ["public/icons/*"],
       "@/utils/*": ["utils/*"],
       "@/env/*": ["env/*"],
-      "@/server/*": ["server/*"]
+      "@/server/*": ["server/*"],
+      "contentlayer/generated": ["./.contentlayer/generated"]
     },
     "types": ["node", "jest", "@testing-library/jest-dom"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.mjs"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.cjs",
+    "**/*.mjs",
+    ".contentlayer/generated"
+  ],
   "exclude": ["node_modules", "cypress", "./cypress.config.ts"],
   "files": ["./globals.d.ts"]
 }
