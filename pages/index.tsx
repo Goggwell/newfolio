@@ -52,7 +52,7 @@ const Home: NextPage = ({ posts }: { posts?: Post[] }) => {
         <title>Samuel&apos;s Portfolio</title>
         <meta
           name="viewport"
-          content="minimum-scale=1.0, initial-scale=1.0, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
+          content="minimum-scale=1.0, initial-scale=1.0, width=device-width, shrink-to-fit=no, viewport-fit=cover"
         />
       </Head>
       <main className={styles.main}>
