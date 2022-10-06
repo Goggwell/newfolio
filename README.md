@@ -1,34 +1,102 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">🚧 UNDER CONSTRUCTION 🚧</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
+</p>
 
-## Getting Started
+> Latest portfolio of Samuel Yusuf
 
-First, run the development server:
+This project is still under construction! Feel free to set it up yourself though 😉
 
-```bash
-npm run dev
-# or
-yarn dev
+## 🔧 Stack
+
+- **Main**
+  - **Framework**: [Next.js](https://nextjs.org/) & [TypeScript](https://www.typescriptlang.org)
+  - **Styling**: [SCSS](https://sass-lang.com)
+- **Program/Journal/Feed**
+  - **Drag**: [react-draggable](https://www.npmjs.com/package/react-draggable)
+  - **ORM**: [Prisma](https://prisma.io/)
+  - **Database**: [Railway](https://railway.app)
+  - **Server**: [tRPC](https://trpc.io/)
+  - **Authentication**: [next-auth](https://next-auth.js.org)
+  - **Content**: [Contentlayer](https://contentlayer.dev/)
+- **Testing**
+  - **Unit Testing**: [Jest](https://jestjs.io)
+  - **Integration Testing**: [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+  - **E2E Testing**: [Cypress](https://www.cypress.io)
+- **Tooling**
+  - **Git Hooks**: [Husky](https://typicode.github.io/husky/#/) & [lint-staged](https://github.com/okonet/lint-staged)
+  - **Formatting**: [ESLint](https://eslint.org) & [Prettier](https://prettier.io)
+  - **Package Manager**: [pnpm](https://pnpm.io)
+- **Others**
+  - **PWA**: [next-pwa](https://www.npmjs.com/package/next-pwa)
+  - **Theming**: [next-themes](https://www.npmjs.com/package/next-themes)
+  - **UI Docs**: [Storybook](https://storybook.js.org)
+
+## 😎 Overview
+
+- `components/*` - React components for the app
+- `cypress/*` - Files related to Cypress/E2E testing
+- `data/*` - Static data for various components
+- `env/*` - Environment variable validation
+- `pages/*` - Pages for app (there's only 1 main page)
+- `pages/_offline.tsx` - Offline fallback page for PWA
+- `pages/api/*` - All API related tasks
+- `posts/*` - MDX files for the content of my blog
+- `prisma/*` - My Prisma schema, which uses a CockroachDB database
+- `public/*` - Static assets including fonts and images
+- `server/*` - The backend, which is a tRPC server
+- `styles/*` - Global SCSS files
+- `types/*` - Global type declarations
+- `utils/*` - Utility functions
+- `worker/*` - Service workers
+
+## ✨ Setup
+
+```sh
+git clone https://github.com/Goggwell/newfolio.git
+cd newfolio
+npm i -g pnpm # this app requires pnpm
+pnpm i
+pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Also set up your own `.env` (example not provided currently)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 🚀 Usage
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```sh
+pnpm dev # development
+pnpm build # build app
+pnpm build # set process.env.ANALYZE to true to see dependency bundle information
+pnpm test # run Jest tests
+pnpm cypress # run Cypress
+pnpm storybook # run Storybook
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 👷 To-Do
 
-## Learn More
+- [] Add example env
+- [] Add static chatbot as a playful experience
+- [] Finish adding Journal entries
+- [] Finish adding static content in other Programs
+- [] Complete styling for all components
+- [] Write unit tests for all components
+- [] Write full E2E test
+- [] Add all components to Storybook
+- [] (Optional) Add to-do list with Jotai/Zustand as Sticky Notes alternative
+- [] (Optional) Add MS Paint clone
+- [] (Optional) Convert react-draggable to @dnd-kit/core
 
-To learn more about Next.js, take a look at the following resources:
+## 👤 Author
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Samuel Yusuf**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Github: [@Goggwell](https://github.com/Goggwell)
 
-## Deploy on Vercel
+## 📜 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This application is licensed under the [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) license.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 🎉 Show your support
+
+Give a ⭐️ if you like this project!
