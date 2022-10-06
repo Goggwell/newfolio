@@ -10,6 +10,7 @@
     "test": "jest --watch",
     "test:ci": "jest --ci",
     "cypress": "cypress open",
+    "cypress:install": "cypress install",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "prepare": "husky install",
