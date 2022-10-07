@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
 import styles from '@/styles/Home.module.scss'
 import FileGrid from '@/components/FileGrid/FileGrid'
 import File from '@/components/File/File'
@@ -22,10 +22,11 @@ const DynamicClock = dynamic(() => import('@/components/Clock/Clock'), {
   ssr: false,
 })
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const posts: Post[] = allPosts.sort((a, b) => {
     return compareDesc(new Date(a.date), new Date(b.date))
   })
+
   return { props: { posts } }
 }
 
