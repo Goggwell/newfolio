@@ -7,7 +7,7 @@
 
 This project is still under construction! Feel free to set it up yourself though 😉
 
-## 🔧 Stack
+## ✨ Stack
 
 - **Main**
   - **Framework**: [Next.js](https://nextjs.org/) & [TypeScript](https://www.typescriptlang.org)
@@ -35,13 +35,14 @@ This project is still under construction! Feel free to set it up yourself though
 ## 😎 Overview
 
 - `components/*` - React components for the app
+- `components/Icons/*` - SVG icons as React components
 - `cypress/*` - Files related to Cypress/E2E testing
 - `data/*` - Static data for various components
 - `env/*` - Environment variable validation
 - `pages/*` - Pages for app (there's only 1 main page)
 - `pages/_offline.tsx` - Offline fallback page for PWA
 - `pages/api/*` - All API related tasks
-- `posts/*` - MDX files for the content of my blog
+- `posts/*` - Markdown files for the content of my blog
 - `prisma/*` - My Prisma schema, which uses a CockroachDB database
 - `public/*` - Static assets including fonts and images
 - `server/*` - The backend, which is a tRPC server
@@ -50,7 +51,7 @@ This project is still under construction! Feel free to set it up yourself though
 - `utils/*` - Utility functions
 - `worker/*` - Service workers
 
-## ✨ Setup
+## 🔧 Setup
 
 ```sh
 git clone https://github.com/Goggwell/newfolio.git
@@ -60,7 +61,7 @@ pnpm i
 pnpm dev
 ```
 
-Also set up your own `.env` (example not provided currently)
+Also set up your own `.env` (example provided at `.env.example`)
 
 ## 🚀 Usage
 
@@ -75,7 +76,7 @@ pnpm storybook # run Storybook
 
 ## 👷 To-Do
 
-- [] Add example env
+- [x] Add example env
 - [] Add static chatbot as a playful experience
 - [] Finish adding Journal entries
 - [] Finish adding static content in other Programs
