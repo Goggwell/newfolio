@@ -4,9 +4,11 @@ import FileGrid from '@/components/FileGrid/FileGrid'
 import File from '@/components/File/File'
 import Taskbar from '@/components/Taskbar/Taskbar'
 import TaskbarItem from '@/components/TaskbarItem/TaskbarItem'
-import ThemeProgram from '@/components/ThemeProgram/ThemeProgram'
-import FeedProgram from '@/components/FeedProgram/FeedProgram'
-import JournalProgram from '@/components/JournalProgram/JournalProgram'
+import {
+  JournalProgram,
+  ThemeProgram,
+  FeedProgram,
+} from '@/components/Programs'
 import { programsData } from 'data/programs'
 import Head from 'next/head'
 import { useState } from 'react'
