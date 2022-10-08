@@ -32,7 +32,10 @@ export const DynamicProjects = dynamic(
   }
 )
 export const DynamicAbout = dynamic(
-  () => import('@/components/Programs/About/AboutProgram/AboutProgram')
+  () => import('@/components/Programs/About/AboutProgram/AboutProgram'),
+  {
+    ssr: false,
+  }
 )
 export const DynamicExperience = dynamic(
   () =>

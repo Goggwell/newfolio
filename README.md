@@ -80,7 +80,7 @@ pnpm storybook # run Storybook
 - [x] Add example env
 - [] Add static chatbot as a playful experience
 - [] Finish adding Journal entries
-- [] Finish adding static content in other Programs
+- [x] Finish adding static content in other Programs
 - [] Complete styling for all components
 - [] Write unit tests for all components
 - [] Write full E2E test
