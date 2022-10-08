@@ -4,3 +4,4 @@ export { default as JournalProgram } from './Journal/JournalProgram/JournalProgr
 export { default as JournalEntryListItem } from './Journal/JournalEntryListItem/JournalEntryListItem'
 export { default as ThemeProgram } from './Theme/ThemeProgram/ThemeProgram'
 export { default as ProjectsProgram } from './Projects/ProjectsProgram/ProjectsProgram'
+export { default as AboutProgram } from './About/AboutProgram/AboutProgram'

@@ -4,7 +4,7 @@ export const programsData = [
     isTask: false,
     isOpen: false,
     isSelected: false,
-    maxWidth: 900,
+    maxWidth: 800,
   },
   {
     name: 'Experience',
