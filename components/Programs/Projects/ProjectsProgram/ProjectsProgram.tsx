@@ -1,22 +1,41 @@
 import styles from './ProjectsProgram.module.scss'
 import { projectsData } from 'data/projects'
+import Link from 'next/link'
+import NextImage from 'next/future/image'
 
 export interface IProjectCard {
-  projectName?: string
+  name: string
   projectTags?: string[]
+  link: string
+  description?: string
 }
 
-const ProjectCard = ({ projectName, projectTags }: IProjectCard) => {
+const ProjectCard = ({
+  name,
+  projectTags,
+  link,
+  description,
+}: IProjectCard) => {
   const tags: JSX.Element[] = []
   projectTags?.forEach((tag) => {
     tags.push(<li className={styles.projectCard__list_item}>{tag}</li>)
   })
 
   return (
-    <figure className={styles.projectCard}>
-      <figcaption>{projectName}</figcaption>
+    <aside className={styles.projectCard__container}>
+      <figure className={styles.projectCard}>
+        <picture className={styles.projectCard__image}>
+          <NextImage src="/gotg.jpg" alt="sample" fill />
+        </picture>
+        <figcaption className={styles.projectCard__name}>
+          <Link href={link}>
+            <a>{name}</a>
+          </Link>
+        </figcaption>
+      </figure>
       <ul className={styles.projectCard__list}>{tags}</ul>
-    </figure>
+      <p className={styles.projectCard__description}>{description}</p>
+    </aside>
   )
 }
 
@@ -26,8 +45,10 @@ const ProjectsProgram = () => {
       {projectsData.map((project, idx) => (
         <ProjectCard
           key={idx}
-          projectName={project.name}
+          name={project.name}
           projectTags={project.tags}
+          link={project.link}
+          description={project.description}
         />
       ))}
     </section>

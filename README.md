@@ -36,6 +36,7 @@ This project is still under construction! Feel free to set it up yourself though
 
 - `components/*` - React components for the app
 - `components/Icons/*` - SVG icons as React components
+- `components/Programs/*` - Invididual program components
 - `cypress/*` - Files related to Cypress/E2E testing
 - `data/*` - Static data for various components
 - `env/*` - Environment variable validation

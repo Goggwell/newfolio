@@ -4,7 +4,13 @@ import styles from './JournalElements.module.scss'
 const Image: React.FC<{ src: string; alt: string }> = (props) => {
   return (
     <figure className={styles.journalImage__container}>
-      <NextImage {...props} fill className={styles.journalImage} />
+      <NextImage
+        {...props}
+        fill
+        className={styles.journalImage}
+        placeholder="blur"
+        blurDataURL="/avatar_small.png"
+      />
       <figcaption>{props.alt}</figcaption>
     </figure>
   )
