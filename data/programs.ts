@@ -28,6 +28,13 @@ export const programsData = [
     maxWidth: 900,
   },
   {
+    name: 'Projects',
+    isTask: false,
+    isOpen: false,
+    isSelected: false,
+    maxWidth: 900,
+  },
+  {
     name: 'Themes',
     isTask: true,
     isOpen: false,

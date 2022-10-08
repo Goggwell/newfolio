@@ -8,6 +8,7 @@ import {
   JournalProgram,
   ThemeProgram,
   FeedProgram,
+  ProjectsProgram,
 } from '@/components/Programs'
 import { programsData } from 'data/programs'
 import Head from 'next/head'
@@ -98,6 +99,7 @@ const Home: NextPage = ({ posts }: { posts?: Post[] }) => {
                 {file.name === 'Themes' && <ThemeProgram />}
                 {file.name === 'Feed' && <FeedProgram />}
                 {file.name === 'Journal' && <JournalProgram posts={posts} />}
+                {file.name === 'Projects' && <ProjectsProgram />}
               </DynamicProgram>
             )
           )
