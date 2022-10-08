@@ -4,6 +4,6 @@ export const themesData = [
   { name: 'Vice' },
   { name: 'Nostalgia' },
   { name: 'Forest' },
-  { name: 'Lab' },
   { name: 'Zomp' },
+  { name: 'Electrode' },
 ]

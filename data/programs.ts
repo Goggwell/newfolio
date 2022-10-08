@@ -4,14 +4,14 @@ export const programsData = [
     isTask: false,
     isOpen: false,
     isSelected: false,
-    maxWidth: 900,
+    maxWidth: 800,
   },
   {
     name: 'Experience',
     isTask: false,
     isOpen: false,
     isSelected: false,
-    maxWidth: 900,
+    maxWidth: 600,
   },
   {
     name: 'Journal',
@@ -21,6 +21,13 @@ export const programsData = [
     maxWidth: 900,
   },
   {
+    name: 'Contact',
+    isTask: false,
+    isOpen: false,
+    isSelected: false,
+    maxWidth: 400,
+  },
+  {
     name: 'Chat',
     isTask: true,
     isOpen: false,
@@ -28,7 +35,7 @@ export const programsData = [
     maxWidth: 900,
   },
   {
-    name: 'Contact',
+    name: 'Projects',
     isTask: false,
     isOpen: false,
     isSelected: false,

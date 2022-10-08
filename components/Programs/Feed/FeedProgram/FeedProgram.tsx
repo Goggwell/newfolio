@@ -1,7 +1,7 @@
 import { signIn, signOut, useSession } from 'next-auth/react'
 import { useState, Suspense } from 'react'
 import { trpc } from '@/utils/trpc'
-import FeedItem from '@/components/FeedItem/FeedItem'
+import FeedItem from '../FeedItem/FeedItem'
 import styles from './FeedProgram.module.scss'
 
 const FeedProgram = () => {

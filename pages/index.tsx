@@ -1,29 +1,31 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
 import styles from '@/styles/Home.module.scss'
 import FileGrid from '@/components/FileGrid/FileGrid'
 import File from '@/components/File/File'
 import Taskbar from '@/components/Taskbar/Taskbar'
 import TaskbarItem from '@/components/TaskbarItem/TaskbarItem'
-import ThemeProgram from '@/components/ThemeProgram/ThemeProgram'
-import FeedProgram from '@/components/FeedProgram/FeedProgram'
-import JournalProgram from '@/components/JournalProgram/JournalProgram'
 import { programsData } from 'data/programs'
 import Head from 'next/head'
 import { useState } from 'react'
 import { compareDesc } from 'date-fns'
 import { allPosts, Post } from 'contentlayer/generated'
-import dynamic from 'next/dynamic'
+import {
+  DynamicAbout,
+  DynamicContact,
+  DynamicExperience,
+  DynamicFeed,
+  DynamicJournal,
+  DynamicProgram,
+  DynamicProjects,
+  DynamicTheme,
+  DynamicClock,
+} from '@/components/dynamicExport'
 
-const DynamicProgram = dynamic(() => import('@/components/Program/Program'))
-
-const DynamicClock = dynamic(() => import('@/components/Clock/Clock'), {
-  ssr: false,
-})
-
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const posts: Post[] = allPosts.sort((a, b) => {
     return compareDesc(new Date(a.date), new Date(b.date))
   })
+
   return { props: { posts } }
 }
 
@@ -92,9 +94,13 @@ const Home: NextPage = ({ posts }: { posts?: Post[] }) => {
                 maxWidth={file.maxWidth}
                 onClose={() => closeProgram(index)}
               >
-                {file.name === 'Themes' && <ThemeProgram />}
-                {file.name === 'Feed' && <FeedProgram />}
-                {file.name === 'Journal' && <JournalProgram posts={posts} />}
+                {file.name === 'About' && <DynamicAbout />}
+                {file.name === 'Experience' && <DynamicExperience />}
+                {file.name === 'Contact' && <DynamicContact />}
+                {file.name === 'Themes' && <DynamicTheme />}
+                {file.name === 'Feed' && <DynamicFeed />}
+                {file.name === 'Journal' && <DynamicJournal posts={posts} />}
+                {file.name === 'Projects' && <DynamicProjects />}
               </DynamicProgram>
             )
           )

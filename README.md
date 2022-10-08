@@ -36,6 +36,7 @@ This project is still under construction! Feel free to set it up yourself though
 
 - `components/*` - React components for the app
 - `components/Icons/*` - SVG icons as React components
+- `components/Programs/*` - Invididual program components
 - `cypress/*` - Files related to Cypress/E2E testing
 - `data/*` - Static data for various components
 - `env/*` - Environment variable validation
@@ -79,7 +80,7 @@ pnpm storybook # run Storybook
 - [x] Add example env
 - [] Add static chatbot as a playful experience
 - [] Finish adding Journal entries
-- [] Finish adding static content in other Programs
+- [x] Finish adding static content in other Programs
 - [] Complete styling for all components
 - [] Write unit tests for all components
 - [] Write full E2E test

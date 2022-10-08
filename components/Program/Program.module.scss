@@ -32,7 +32,7 @@
     &__icon,
     &__title {
       list-style: none;
-      color: $text-color;
+      color: $theme-title-color;
     }
 
     &__icon {
@@ -64,7 +64,7 @@
     background: transparent;
     width: calc(100% - 20px);
     height: calc(100% - 47px);
-    overflow: auto;
+    overflow: hidden;
     padding: 10px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;

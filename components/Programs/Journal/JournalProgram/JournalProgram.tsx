@@ -1,11 +1,17 @@
 import { Post } from 'contentlayer/generated'
 import styles from './JournalProgram.module.scss'
 import React, { useState } from 'react'
+import { useMDXComponent } from '@/utils/useMDXComponent'
 import JournalEntryListItem from '../JournalEntryListItem/JournalEntryListItem'
+import JournalElements from '../JournalElements/JournalElements'
+import { samplePost } from 'data/samplePost'
 
 const JournalProgram = ({ posts }: { posts?: Post[] }) => {
   const [entryID, setEntryID] = useState('')
-  const singlePost = posts?.find((post) => post._id === entryID)
+  // samplePost required since useMDXComponent hook cannot take undefined
+  const singlePost = posts?.find((post) => post._id === entryID) || samplePost
+
+  const MDXContent = useMDXComponent(singlePost.body.code)
 
   const handleClick = (id: string) => {
     setEntryID(id)
@@ -25,9 +31,7 @@ const JournalProgram = ({ posts }: { posts?: Post[] }) => {
           ))}
         </>
       )}
-      {singlePost && (
-        <div dangerouslySetInnerHTML={{ __html: singlePost.body.html }} />
-      )}
+      {singlePost && <MDXContent components={JournalElements} />}
     </ul>
   )
 }
