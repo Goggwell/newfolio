@@ -5,3 +5,4 @@ export { default as JournalEntryListItem } from './Journal/JournalEntryListItem/
 export { default as ThemeProgram } from './Theme/ThemeProgram/ThemeProgram'
 export { default as ProjectsProgram } from './Projects/ProjectsProgram/ProjectsProgram'
 export { default as AboutProgram } from './About/AboutProgram/AboutProgram'
+export { default as ExperienceProgram } from './Experience/ExperienceProgram/ExperienceProgram'

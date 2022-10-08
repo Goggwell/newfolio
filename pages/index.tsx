@@ -10,6 +10,7 @@ import {
   FeedProgram,
   ProjectsProgram,
   AboutProgram,
+  ExperienceProgram,
 } from '@/components/Programs'
 import { programsData } from 'data/programs'
 import Head from 'next/head'
@@ -98,6 +99,7 @@ const Home: NextPage = ({ posts }: { posts?: Post[] }) => {
                 onClose={() => closeProgram(index)}
               >
                 {file.name === 'About' && <AboutProgram />}
+                {file.name === 'Experience' && <ExperienceProgram />}
                 {file.name === 'Themes' && <ThemeProgram />}
                 {file.name === 'Feed' && <FeedProgram />}
                 {file.name === 'Journal' && <JournalProgram posts={posts} />}
