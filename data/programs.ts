@@ -21,6 +21,13 @@ export const programsData = [
     maxWidth: 900,
   },
   {
+    name: 'Contact',
+    isTask: false,
+    isOpen: false,
+    isSelected: false,
+    maxWidth: 400,
+  },
+  {
     name: 'Chat',
     isTask: true,
     isOpen: false,

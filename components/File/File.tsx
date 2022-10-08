@@ -6,6 +6,7 @@ import styles from './File.module.scss'
 import FolderIcon from '../Icons/FolderIcon'
 import ExperienceIcon from '../Icons/ExperienceIcon'
 import ProjectsIcon from '../Icons/ProjectsIcon'
+import ContactIcon from '../Icons/ContactIcon'
 
 export interface IFile {
   name?: string
@@ -31,6 +32,7 @@ const File = ({ name = 'About', onClick, isSelected }: IFile) => {
         {name === 'About' && <FolderIcon />}
         {name === 'Experience' && <ExperienceIcon />}
         {name === 'Projects' && <ProjectsIcon />}
+        {name === 'Contact' && <ContactIcon />}
       </i>
       <figcaption className={styles.file__name}>{name}</figcaption>
     </figure>

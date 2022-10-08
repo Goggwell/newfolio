@@ -11,6 +11,7 @@ import {
   ProjectsProgram,
   AboutProgram,
   ExperienceProgram,
+  ContactProgram,
 } from '@/components/Programs'
 import { programsData } from 'data/programs'
 import Head from 'next/head'
@@ -100,6 +101,7 @@ const Home: NextPage = ({ posts }: { posts?: Post[] }) => {
               >
                 {file.name === 'About' && <AboutProgram />}
                 {file.name === 'Experience' && <ExperienceProgram />}
+                {file.name === 'Contact' && <ContactProgram />}
                 {file.name === 'Themes' && <ThemeProgram />}
                 {file.name === 'Feed' && <FeedProgram />}
                 {file.name === 'Journal' && <JournalProgram posts={posts} />}
