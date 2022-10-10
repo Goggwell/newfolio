@@ -27,13 +27,13 @@ export const programsData = [
     isSelected: false,
     maxWidth: 400,
   },
-  {
-    name: 'Chat',
-    isTask: true,
-    isOpen: false,
-    isSelected: false,
-    maxWidth: 900,
-  },
+  // {
+  //   name: 'Chat',
+  //   isTask: true,
+  //   isOpen: false,
+  //   isSelected: false,
+  //   maxWidth: 900,
+  // },
   {
     name: 'Projects',
     isTask: false,
