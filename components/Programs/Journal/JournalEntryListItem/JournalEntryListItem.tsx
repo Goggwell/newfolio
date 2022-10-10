@@ -5,11 +5,11 @@ import React from 'react'
 
 const JournalEntryListItem = (post: Post) => {
   return (
-    <li>
+    <li className={styles.journalItem}>
+      <h3>{post.title}</h3>
       <time dateTime={post.date}>
         {format(parseISO(post.date), 'LLLL d, yyyy')}
       </time>
-      <span>{post.title}</span>
     </li>
   )
 }

@@ -15,17 +15,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
 }) => {
   return (
     <SessionProvider session={session}>
-      <ThemeProvider
-        themes={[
-          'dark',
-          'coquelicot',
-          'vice',
-          'nostalgia',
-          'forest',
-          'lab',
-          'zomp',
-        ]}
-      >
+      <ThemeProvider>
         <Component {...pageProps} />
       </ThemeProvider>
     </SessionProvider>

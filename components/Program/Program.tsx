@@ -42,6 +42,7 @@ const Program = ({ name, children, onClose, maxWidth = 900 }: IProgram) => {
       onDrag={handleDrag}
       onMouseDown={handleMouseDown}
       bounds="parent"
+      cancel=".close, .minimize"
     >
       <aside
         data-testid="program"
@@ -60,13 +61,16 @@ const Program = ({ name, children, onClose, maxWidth = 900 }: IProgram) => {
           className={clsx(styles.program__toolbar, `toolbar`)}
         >
           <li
-            className={styles.program__toolbar__icon}
+            className={clsx(styles.program__toolbar__icon, `minimize`)}
             onClick={handleMinimize}
           >
             <MinimizeIcon />
           </li>
           <li className={styles.program__toolbar__title}>{name}</li>
-          <li className={styles.program__toolbar__icon} onClick={onClose}>
+          <li
+            className={clsx(styles.program__toolbar__icon, `close`)}
+            onClick={onClose}
+          >
             <CloseIcon />
           </li>
         </menu>

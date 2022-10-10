@@ -14,6 +14,11 @@
   transition: max-height 200ms ease;
   $program: &;
 
+  @media (max-width: 768px), (max-height: 700px) {
+    top: 0;
+    left: 0;
+  }
+
   &.minimized {
     max-height: 47px;
   }
