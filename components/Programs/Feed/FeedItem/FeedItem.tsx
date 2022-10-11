@@ -9,13 +9,17 @@ export interface IFeedItem {
 
 const FeedItem = ({ message, name, createdAt }: IFeedItem) => {
   return (
-    <li>
-      <p>{message}</p>
-      <span>{name}</span>
-      {createdAt && (
-        // Date does not accept undefined values, hence the need to wrap in a conditional
-        <span>{format(new Date(createdAt), "d MMM yyyy 'at' h:mm bb")}</span>
-      )}
+    <li className={styles.feedItem}>
+      <p className={styles.feedItem__message}>{message}</p>
+      <span className={styles.feedItem__name}>
+        {name}{' '}
+        {createdAt && (
+          // Date does not accept undefined values, hence the need to wrap in a conditional
+          <span className={styles.feedItem__time}>
+            | {format(new Date(createdAt), "d MMM yyyy 'at' h:mm bb")}
+          </span>
+        )}
+      </span>
     </li>
   )
 }

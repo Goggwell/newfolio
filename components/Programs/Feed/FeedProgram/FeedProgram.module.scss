@@ -1,1 +1,126 @@
 @import '../../../../styles/variables.module.scss';
+
+.feedProgram {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+
+  &__user {
+    &_container {
+      width: 30%;
+      padding-right: 20px;
+      color: $text-color;
+
+      b {
+        font-size: 18px;
+        color: $program-outline-color;
+        text-transform: uppercase;
+      }
+
+      button {
+        font-family: 'JetBrains Mono', sans-serif;
+        color: $text-color;
+        opacity: 0.8;
+        background-color: $bg-color;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 14px;
+        padding: 5px 10px;
+        transition: opacity 200ms ease;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__feed {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+    color: $text-color;
+    height: 85%;
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: $program-color $program-outline-color;
+    padding-right: 20px;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+
+      &-track,
+      &-thumb {
+        border-radius: 100px;
+      }
+
+      &-track {
+        background-color: $program-color;
+      }
+
+      &-thumb {
+        background-color: $program-outline-color;
+      }
+    }
+
+    &_container {
+      width: 70%;
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &_form {
+      width: 100%;
+      height: 12%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      input,
+      button {
+        padding: 10px;
+        outline: none;
+        background-color: $bg-color;
+        border: none;
+        font-family: 'JetBrains Mono', sans-serif;
+        color: $text-color;
+        transition: filter 200ms ease;
+
+        &:not(:disabled) {
+          &:hover,
+          &:focus,
+          &:active {
+            filter: brightness(1.2);
+          }
+        }
+
+        &:disabled {
+          cursor: not-allowed;
+          opacity: 0.8;
+        }
+      }
+
+      input {
+        width: 81%;
+        &::placeholder {
+          color: $text-color;
+          opacity: 0.5;
+        }
+      }
+
+      button {
+        width: 17%;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -15,6 +15,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    domains: ['cdn.discordapp.com'],
+  },
   sassOptions: {
     includePaths: [path.join(__dirname), 'styles'],
     prependData: `@import "variables.module.scss";`,
