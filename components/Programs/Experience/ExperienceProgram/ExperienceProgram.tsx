@@ -1,7 +1,6 @@
 import styles from './ExperienceProgram.module.scss'
 import { jobsData } from 'data/jobs'
 import Link from 'next/link'
-import { Url } from 'url'
 
 export interface IJobCard {
   companyName: string

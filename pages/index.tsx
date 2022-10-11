@@ -10,17 +10,17 @@ import { useState } from 'react'
 import { compareDesc } from 'date-fns'
 import { allPosts, Post } from 'contentlayer/generated'
 import { useWindowSize } from '@/hooks/index'
+import Program from '@/components/Program/Program'
 import {
-  DynamicAbout,
-  DynamicContact,
-  DynamicExperience,
-  DynamicFeed,
-  DynamicJournal,
-  DynamicProgram,
-  DynamicProjects,
-  DynamicTheme,
-  DynamicClock,
-} from '@/components/dynamicExport'
+  AboutProgram,
+  ContactProgram,
+  ExperienceProgram,
+  FeedProgram,
+  JournalProgram,
+  ProjectsProgram,
+  ThemeProgram,
+} from '@/components/Programs'
+import { DynamicClock } from '@/components/dynamicExport'
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts: Post[] = allPosts.sort((a, b) => {
@@ -95,19 +95,19 @@ const Home: NextPage = ({ posts }: { posts?: Post[] }) => {
         {files.map((file, index) => {
           return (
             file.isOpen && (
-              <DynamicProgram
+              <Program
                 name={file.name}
                 maxWidth={file.maxWidth}
                 onClose={() => closeProgram(index)}
               >
-                {file.name === 'About' && <DynamicAbout />}
-                {file.name === 'Experience' && <DynamicExperience />}
-                {file.name === 'Contact' && <DynamicContact />}
-                {file.name === 'Themes' && <DynamicTheme />}
-                {file.name === 'Feed' && <DynamicFeed />}
-                {file.name === 'Journal' && <DynamicJournal posts={posts} />}
-                {file.name === 'Projects' && <DynamicProjects />}
-              </DynamicProgram>
+                {file.name === 'About' && <AboutProgram />}
+                {file.name === 'Experience' && <ExperienceProgram />}
+                {file.name === 'Contact' && <ContactProgram />}
+                {file.name === 'Themes' && <ThemeProgram />}
+                {file.name === 'Feed' && <FeedProgram />}
+                {file.name === 'Journal' && <JournalProgram posts={posts} />}
+                {file.name === 'Projects' && <ProjectsProgram />}
+              </Program>
             )
           )
         })}
