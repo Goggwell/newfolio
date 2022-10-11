@@ -23,20 +23,26 @@ export default function Document() {
           property="og:site_name"
           content="Samuel's Portfolio"
         />
+        <meta name="author" property="og:author" content="Samuel Yusuf" />
         <meta
           name="image"
           property="og:image"
-          content="https://www.samlovescode.dev/screenshot.png"
+          content="https://www.samlikescode.dev/screenshot.png"
         />
         <meta
           name="description"
           property="og:description"
-          content="The latest portfolio of Samuel, a Software Engineer that primarily builds with TypeScript and React"
+          content="The latest portfolio of Samuel, a Software Engineer that primarily builds with TypeScript and React. It is styled in reference to desktop operating systems, and similarly functions as such. Open and drag around as many programs as you wish!"
         />
         <meta
           name="url"
           property="og:url"
-          content="https://www.samlovescode.dev"
+          content="https://www.samlikescode.dev"
+        />
+        <meta
+          name="publish_date"
+          property="og:publish_date"
+          content="2022-10-11T00:00:00-0600"
         />
         <meta name="theme-color" content="#da4167" />
       </Head>
