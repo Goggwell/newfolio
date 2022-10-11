@@ -20,6 +20,7 @@
       "@/pages/*": ["pages/*"],
       "@/styles/*": ["styles/*"],
       "@icons/*": ["public/icons/*"],
+      "@/hooks/*": ["hooks/*"],
       "@/utils/*": ["utils/*"],
       "@/env/*": ["env/*"],
       "@/server/*": ["server/*"],
