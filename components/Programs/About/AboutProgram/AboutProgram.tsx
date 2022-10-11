@@ -12,7 +12,6 @@ const AboutProgram = () => {
           width={256}
           height={256}
           placeholder="blur"
-          blurDataURL="/avatar_small.png"
         />
       </picture>
       <ul className={styles.aboutProgram__list}>

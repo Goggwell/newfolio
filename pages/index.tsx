@@ -74,20 +74,24 @@ const Home: NextPage = ({ posts }: { posts?: Post[] }) => {
             )
           })}
         </FileGrid>
-        <Taskbar>
-          {files.map((file, index) => {
-            return (
-              file.isTask && (
-                <TaskbarItem
-                  key={index}
-                  name={file.name}
-                  onClick={() => openProgram(index)}
-                />
-              )
-            )
-          })}
-        </Taskbar>
-        {width > 768 && <DynamicClock />}
+        {width > 768 && (
+          <>
+            <Taskbar>
+              {files.map((file, index) => {
+                return (
+                  file.isTask && (
+                    <TaskbarItem
+                      key={index}
+                      name={file.name}
+                      onClick={() => openProgram(index)}
+                    />
+                  )
+                )
+              })}
+            </Taskbar>
+            <DynamicClock />
+          </>
+        )}
         {files.map((file, index) => {
           return (
             file.isOpen && (

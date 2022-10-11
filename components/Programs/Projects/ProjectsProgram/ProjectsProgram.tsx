@@ -25,7 +25,7 @@ const ProjectCard = ({
     <aside className={styles.projectCard__container}>
       <figure className={styles.projectCard}>
         <picture className={styles.projectCard__image}>
-          <NextImage src="/gotg.jpg" alt="sample" fill />
+          <NextImage src="/gotg.jpg" alt="sample" fill placeholder="blur" />
         </picture>
         <figcaption className={styles.projectCard__name}>
           <Link href={link}>
