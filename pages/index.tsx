@@ -9,6 +9,7 @@ import Head from 'next/head'
 import { useState } from 'react'
 import { compareDesc } from 'date-fns'
 import { allPosts, Post } from 'contentlayer/generated'
+import { useWindowSize } from '@/hooks/index'
 import {
   DynamicAbout,
   DynamicContact,
@@ -31,6 +32,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Home: NextPage = ({ posts }: { posts?: Post[] }) => {
   const [files, setFiles] = useState(programsData)
+  const { width, height } = useWindowSize()
 
   const openProgram = (value: number) => {
     const newFiles = [...files]
@@ -85,7 +87,7 @@ const Home: NextPage = ({ posts }: { posts?: Post[] }) => {
             )
           })}
         </Taskbar>
-        <DynamicClock />
+        {width > 768 && <DynamicClock />}
         {files.map((file, index) => {
           return (
             file.isOpen && (

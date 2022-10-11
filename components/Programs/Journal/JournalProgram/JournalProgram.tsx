@@ -18,21 +18,26 @@ const JournalProgram = ({ posts }: { posts?: Post[] }) => {
   }
 
   return (
-    <ul>
-      <li>
-        <span>here are some entries</span>
-      </li>
-      {posts && (
-        <>
-          {posts.map((post) => (
-            <li key={post._id} onClick={() => handleClick(post._id)}>
-              <JournalEntryListItem {...post} />
-            </li>
-          ))}
-        </>
-      )}
-      {singlePost && <MDXContent components={JournalElements} />}
-    </ul>
+    <section className={styles.journalProgram}>
+      <ul className={styles.journalProgram__list}>
+        {posts && (
+          <>
+            {posts.map((post) => (
+              <li
+                key={post._id}
+                onClick={() => handleClick(post._id)}
+                className={styles.journalProgram__list_item}
+              >
+                <JournalEntryListItem {...post} />
+              </li>
+            ))}
+          </>
+        )}
+      </ul>
+      <article className={styles.journalProgram__entry}>
+        {singlePost && <MDXContent components={JournalElements} />}
+      </article>
+    </section>
   )
 }
 

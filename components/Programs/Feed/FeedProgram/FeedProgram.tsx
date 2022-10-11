@@ -26,54 +26,98 @@ const FeedProgram = () => {
   if (status === 'loading') return <section>Loading...</section>
 
   return (
-    <section>
-      <h3>Check the worldwide feed</h3>
+    <section className={styles.feedProgram}>
       {session ? (
-        <div>
-          <p>hi {session.user?.name}</p>
+        <>
+          <aside className={styles.feedProgram__user_container}>
+            <h3 className={styles.feedProgram__title}>WORLDWIDE FEED</h3>
+            <p>
+              Thanks for signing in <br />
+              <b>{session.user?.name}</b>
+            </p>
 
-          <button onClick={() => signOut({ redirect: false })}>Sign Out</button>
+            <button onClick={() => signOut({ redirect: false })}>
+              Sign Out
+            </button>
+          </aside>
+          <aside className={styles.feedProgram__feed_container}>
+            <ul className={styles.feedProgram__feed}>
+              <Suspense fallback={null}>
+                {messages?.map((msg, index) => {
+                  return (
+                    <FeedItem
+                      key={index}
+                      name={msg.name}
+                      message={msg.message}
+                      createdAt={msg.createdAt}
+                    />
+                  )
+                })}
+              </Suspense>
+            </ul>
+            <form
+              className={styles.feedProgram__feed_form}
+              onSubmit={(event) => {
+                event.preventDefault()
 
-          <form
-            onSubmit={(event) => {
-              event.preventDefault()
+                postMessage.mutate({
+                  name: session.user?.name as string,
+                  message,
+                })
 
-              postMessage.mutate({
-                name: session.user?.name as string,
-                message,
-              })
-
-              setMessage('')
-            }}
-          >
-            <input
-              type="text"
-              value={message}
-              placeholder="Your message..."
-              maxLength={100}
-              onChange={(event) => setMessage(event.target.value)}
-            />
-            <button type="submit">Submit</button>
-          </form>
-        </div>
+                setMessage('')
+              }}
+            >
+              <input
+                type="text"
+                value={message}
+                placeholder="Your message..."
+                maxLength={100}
+                onChange={(event) => setMessage(event.target.value)}
+              />
+              <button type="submit">Submit</button>
+            </form>
+          </aside>
+        </>
       ) : (
         <>
-          <button onClick={() => signIn('discord')}>Login with Discord</button>
-          <button onClick={() => signIn('github')}>Login with GitHub</button>
+          <aside className={styles.feedProgram__user_container}>
+            <h3 className={styles.feedProgram__title}>WORLDWIDE FEED</h3>
+            <p>Sign in to share your thoughts with the feed of the world!</p>
+
+            <button onClick={() => signIn('github')}>Login with GitHub</button>
+          </aside>
+          <aside className={styles.feedProgram__feed_container}>
+            <ul className={styles.feedProgram__feed}>
+              <Suspense fallback={null}>
+                {messages?.map((msg, index) => {
+                  return (
+                    <FeedItem
+                      key={index}
+                      name={msg.name}
+                      message={msg.message}
+                      createdAt={msg.createdAt}
+                    />
+                  )
+                })}
+              </Suspense>
+            </ul>
+            <form className={styles.feedProgram__feed_form}>
+              <input
+                type="text"
+                value={message}
+                placeholder="Sign in to post..."
+                maxLength={100}
+                onChange={(event) => setMessage(event.target.value)}
+                disabled
+              />
+              <button type="submit" disabled>
+                Submit
+              </button>
+            </form>
+          </aside>
         </>
       )}
-      <Suspense fallback={null}>
-        {messages?.map((msg, index) => {
-          return (
-            <FeedItem
-              key={index}
-              name={msg.name}
-              message={msg.message}
-              createdAt={msg.createdAt}
-            />
-          )
-        })}
-      </Suspense>
     </section>
   )
 }
