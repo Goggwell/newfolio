@@ -9,7 +9,6 @@ const Image: React.FC<{ src: string; alt: string }> = (props) => {
         fill
         className={styles.journalImage}
         placeholder="blur"
-        blurDataURL="/avatar_small.png"
       />
       <figcaption>{props.alt}</figcaption>
     </figure>
