@@ -26,7 +26,7 @@ export default function Document() {
         <meta
           name="image"
           property="og:image"
-          content="https://www.samlovescode.dev/gotg.jpg"
+          content="https://www.samlovescode.dev/screenshot.png"
         />
         <meta
           name="description"
