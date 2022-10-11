@@ -11,4 +11,11 @@
   left: 0;
   margin: 40px;
   margin-top: 60px;
+
+  @media (max-width: 768px), (max-height: 700px) {
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    margin-top: 40px;
+  }
 }
