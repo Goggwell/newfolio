@@ -25,6 +25,9 @@ jobs:
         with:
           version: '7.13.1'
 
+      - name: Install Cypress
+        run: pnpm add cypress
+
       - name: Get pnpm store directory
         id: pnpm-cache
         run: |
