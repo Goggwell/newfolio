@@ -4,33 +4,24 @@
 
 @layer base {
   :root {
-    --background: hsl(32, 57, 95);
-    --backgroundRGB: hsl(343, 35, 55);
-    --text: hsl(248, 19, 40);
-    --dot: hsl(248, 19, 40);
-    --programOutline: hsl(343, 35, 55);
-    --program: hsl(32, 57, 95);
-    --select: hsl(32, 57, 85);
-    --themeTitle: hsl(248, 19, 40);
+    --background: 32 57% 95%;
+    --backgroundRGB: 343 35% 55%;
+    --text: 248 19% 40%;
+    --dot: 248 19%, 40%;
+    --programOutline: 343 35% 55%;
+    --program: 32 57% 95%;
+    --select: 32 57% 85%;
+    --themeTitle: 248 19% 40%;
   }
 
   .dark {
-    --background: hsl(240, 13, 14);
-    --backgroundRGB: hsl(353, 69, 65);
-    --text: hsl(51, 33, 80);
-    --dot: hsl(51, 33, 80);
-    --programOutline: hsl(353, 69, 65);
-    --program: hsl(240, 13, 14);
-    --select: hsl(49, 8, 26);
-    --themeTitle: hsl(51, 33, 80);
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background;
+    --background: 240 13% 14%;
+    --backgroundRGB: 353 69% 65%;
+    --text: 51 33% 80%;
+    --dot: 51 33%, 80%;
+    --programOutline: 353 69% 65%;
+    --program: 240 13% 14%;
+    --select: 49 8% 26%;
+    --themeTitle: 51 33% 80%;
   }
 }
