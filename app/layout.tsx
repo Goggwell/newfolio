@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 
 import { cn } from "@/lib/utils/cn";
@@ -18,6 +18,13 @@ export const metadata: Metadata = {
     siteName: "Sam Likes Code",
     url: "https://samlikescode.dev",
   },
+};
+
+export const viewport: Viewport = {
+  minimumScale: 1.0,
+  initialScale: 1.0,
+  width: "device-width",
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
