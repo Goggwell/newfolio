@@ -1,3 +1,5 @@
+import { Program } from "@/components/ui/Program";
+
 export const runtime = "edge";
 
 export default function Home() {
@@ -9,7 +11,11 @@ export default function Home() {
           backgroundImage:
             "radial-gradient(hsla(var(--dot), 0.1) 1px, transparent 0)",
         }}
-      ></section>
+      >
+        <Program name="test">
+          <h1>Howdy</h1>
+        </Program>
+      </section>
     </main>
   );
 }

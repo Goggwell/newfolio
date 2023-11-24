@@ -11,7 +11,7 @@
     --programOutline: 343 35% 55%;
     --program: 32 57% 95%;
     --select: 32 57% 85%;
-    --themeTitle: 248 19% 40%;
+    --themeTitle: 32 57% 95%;
   }
 
   .dark {
@@ -22,6 +22,6 @@
     --programOutline: 353 69% 65%;
     --program: 240 13% 14%;
     --select: 49 8% 26%;
-    --themeTitle: 51 33% 80%;
+    --themeTitle: 240 13% 14%;
   }
 }

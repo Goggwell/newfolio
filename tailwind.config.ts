@@ -20,7 +20,7 @@ const config: Config = {
         backgroundRGB: "hsl(var(--backgroundRGB))",
         text: "hsl(var(--text))",
         dot: "hsl(var(--dot))",
-        programOutine: "hsl(var(--programOutline))",
+        programOutline: "hsl(var(--programOutline))",
         program: "hsl(var(--program))",
         select: "hsl(var(--select))",
         themeTitle: "hsl(var(--themeTitle))",
