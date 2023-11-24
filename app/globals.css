@@ -2,26 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: hsl(32, 57, 95);
+    --backgroundRGB: hsl(343, 35, 55);
+    --text: hsl(248, 19, 40);
+    --dot: hsl(248, 19, 40);
+    --programOutline: hsl(343, 35, 55);
+    --program: hsl(32, 57, 95);
+    --select: hsl(32, 57, 85);
+    --themeTitle: hsl(248, 19, 40);
+  }
+
+  .dark {
+    --background: hsl(240, 13, 14);
+    --backgroundRGB: hsl(353, 69, 65);
+    --text: hsl(51, 33, 80);
+    --dot: hsl(51, 33, 80);
+    --programOutline: hsl(353, 69, 65);
+    --program: hsl(240, 13, 14);
+    --select: hsl(49, 8, 26);
+    --themeTitle: hsl(51, 33, 80);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background;
+  }
 }
