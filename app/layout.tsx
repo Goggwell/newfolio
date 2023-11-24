@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 
 import { cn } from "@/lib/utils/cn";
 
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
+
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -28,7 +30,14 @@ export default function RootLayout({
       <body
         className={cn("min-h-screen font-sans antialiased", inter.variable)}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
