@@ -1,4 +1,5 @@
 import { Program } from "@/components/ui/Program";
+import { ThemesProgram } from "@/components/programs/Themes";
 
 export const runtime = "edge";
 
@@ -12,8 +13,8 @@ export default function Home() {
             "radial-gradient(hsla(var(--dot), 0.1) 1px, transparent 0)",
         }}
       >
-        <Program name="test">
-          <h1>Howdy</h1>
+        <Program name="themes">
+          <ThemesProgram />
         </Program>
       </section>
     </main>
