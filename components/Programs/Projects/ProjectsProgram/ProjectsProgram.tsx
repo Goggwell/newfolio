@@ -1,7 +1,7 @@
 import styles from './ProjectsProgram.module.scss'
 import { projectsData } from 'data/projects'
 import Link from 'next/link'
-import NextImage from 'next/future/image'
+import Image from 'next/image'
 
 export interface IProjectCard {
   name: string
@@ -25,12 +25,10 @@ const ProjectCard = ({
     <aside className={styles.projectCard__container}>
       <figure className={styles.projectCard}>
         <picture className={styles.projectCard__image}>
-          <NextImage src="/gotg.jpg" alt="sample" fill placeholder="blur" />
+          <Image src="/gotg.jpg" alt="sample" fill />
         </picture>
         <figcaption className={styles.projectCard__name}>
-          <Link href={link}>
-            <a>{name}</a>
-          </Link>
+          <Link href={link}>{name}</Link>
         </figcaption>
       </figure>
       <ul className={styles.projectCard__list}>{tags}</ul>

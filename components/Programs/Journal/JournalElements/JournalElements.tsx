@@ -1,4 +1,4 @@
-import NextImage from 'next/future/image'
+import NextImage from 'next/image'
 import styles from './JournalElements.module.scss'
 
 const Image: React.FC<{ src: string; alt: string }> = (props) => {

@@ -1,12 +1,12 @@
 import styles from './AboutProgram.module.scss'
-import NextImage from 'next/future/image'
+import Image from 'next/image'
 import clsx from 'clsx'
 
 const AboutProgram = () => {
   return (
     <section className={styles.aboutProgram}>
       <picture className={styles.aboutProgram__image}>
-        <NextImage
+        <Image
           src="/avatar.png"
           alt="Samuel Yusuf"
           width={256}
