@@ -13,17 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2-beta
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '16.17.1'
+          node-version: '20.5.1'
           check-latest: true
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v2.2.2
+        uses: pnpm/action-setup@v2.4.0
         id: pnpm-install
         with:
-          version: '7.13.1'
+          version: '8.11.0'
 
       - name: Install Cypress
         run: pnpm add cypress
@@ -33,7 +33,7 @@ jobs:
         run: |
           echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v3.3.2
         name: Setup pnpm cache
         with:
           path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
@@ -51,7 +51,7 @@ jobs:
         run: pnpm test:ci
 
       - name: Cypress.io
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v6.6.0
         with:
           start: pnpm start
           wait-on: 'http://localhost:3000'
