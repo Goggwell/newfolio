@@ -48,7 +48,9 @@
     "react-draggable": "^4.4.6",
     "react-query": "^3.39.3",
     "sass": "^1.69.5",
-    "superjson": "^2.2.1"
+    "sharp": "0.33.0-rc.2",
+    "superjson": "^2.2.1",
+    "swr": "^2.2.4"
   },
   "devDependencies": {
     "@babel/core": "^7.23.3",

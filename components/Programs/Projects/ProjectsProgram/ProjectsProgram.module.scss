@@ -28,13 +28,9 @@
   &__image {
     width: 100%;
     margin: 0;
-
-    img {
-      object-fit: cover;
-      width: 100% !important;
-      position: relative !important;
-      height: unset !important;
-    }
+    height: 168.75px;
+    background: $bg-color;
+    display: block;
   }
 
   &__name {

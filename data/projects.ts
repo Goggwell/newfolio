@@ -4,5 +4,6 @@ export const projectsData = [
     tags: ['TypeScript', 'NextJS', 'SCSS', 'react-sweet-state'],
     link: 'https://github.com/Goggwell/quiz-ts/',
     description: 'A trivia game that pulls data from the OpenTDB API',
+    image: 'gotg.jpg',
   },
 ]
