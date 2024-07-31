@@ -71,6 +71,11 @@
 				"useValidTypeof": "error"
 			}
 		},
-		"ignore": ["**/dist", "**/.eslintrc.cjs", "**/biome.json"]
+		"ignore": [
+			"**/dist",
+			"**/.million/store.json",
+			"**/biome.json",
+			"**/package.json"
+		]
 	}
 }
