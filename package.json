@@ -18,7 +18,8 @@
 	"dependencies": {
 		"@million/lint": "^1.0.0-rc.84",
 		"react": "^18.3.1",
-		"react-dom": "^18.3.1"
+		"react-dom": "^18.3.1",
+		"use-signals": "^0.1.1"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.8.3",
