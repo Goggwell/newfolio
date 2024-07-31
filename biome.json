@@ -75,7 +75,9 @@
 			"**/dist",
 			"**/.million/store.json",
 			"**/biome.json",
-			"**/package.json"
+			"**/package.json",
+			"**/tsconfig.app.json",
+			"**/tsconfig.node.json"
 		]
 	}
 }
