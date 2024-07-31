@@ -25,13 +25,13 @@
 
 		/* Aliases */
 		"paths": {
-			"assets/*": ["./src/assets/*"],
-			"components/*": ["./src/components/*"],
-			"features/*": ["./src/features/*"],
-			"hooks/*": ["./src/hooks/*"],
-			"services/*": ["./src/services/*"],
-			"store/*": ["./src/store/*"],
-			"utils/*": ["./src/utils/*"]
+			"@/assets/*": ["./src/assets/*"],
+			"@/components/*": ["./src/components/*"],
+			"@/features/*": ["./src/features/*"],
+			"@/hooks/*": ["./src/hooks/*"],
+			"@/services/*": ["./src/services/*"],
+			"@/store/*": ["./src/store/*"],
+			"@/utils/*": ["./src/utils/*"]
 		}
 	},
 	"include": ["src"]

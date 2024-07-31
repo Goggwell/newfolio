@@ -1,4 +1,4 @@
-import reactLogo from "assets/react.svg";
+import reactLogo from "@/assets/react.svg";
 import { Signal, useSignal } from "use-signals";
 import viteLogo from "/vite.svg";
 import "./App.css";

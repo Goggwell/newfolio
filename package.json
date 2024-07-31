@@ -8,7 +8,8 @@
 		"build": "tsc -b && vite build",
 		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview",
-		"prepare": "husky"
+		"prepare": "husky",
+		"test": "vitest"
 	},
 	"lint-staged": {
 		"*.{js,ts,jsx,tsx,css,scss}": [
@@ -23,13 +24,18 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.8.3",
+		"@testing-library/jest-dom": "^6.4.8",
+		"@testing-library/react": "^16.0.0",
+		"@types/bun": "^1.1.6",
 		"@types/node": "^22.0.0",
 		"@types/react": "^18.3.3",
 		"@types/react-dom": "^18.3.0",
 		"@vitejs/plugin-react": "^4.3.1",
 		"husky": "^9.1.4",
+		"jsdom": "^24.1.1",
 		"lint-staged": "^15.2.7",
 		"typescript": "^5.2.2",
-		"vite": "^5.3.4"
+		"vite": "^5.3.4",
+		"vitest": "^2.0.4"
 	}
 }
