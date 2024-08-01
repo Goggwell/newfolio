@@ -23,7 +23,7 @@ export const useThemeStore = create<ThemeStoreState>()(
 		{
 			name: STORAGE_KEY,
 			storage: createJSONStorage(() => localStorage),
-			partialize: (state) => ({ theme: state.theme }),
+			partialize: (state) => ({ theme: state.theme, scheme: state.scheme }),
 		},
 	),
 );
