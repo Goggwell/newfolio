@@ -1,7 +1,6 @@
 import reactLogo from "@/assets/react.svg";
 import { Signal, useSignal } from "use-signals";
 import viteLogo from "/vite.svg";
-import "./App.css";
 
 const counter = new Signal.State(0);
 
@@ -10,7 +9,7 @@ function App() {
 	const inc = () => counter.set(counter.get() + 1);
 
 	return (
-		<>
+		<div className="bg-primary h-dvh w-dvw">
 			<div>
 				<a href="https://vitejs.dev" target="_blank">
 					<img src={viteLogo} className="logo" alt="Vite logo" />
@@ -19,7 +18,9 @@ function App() {
 					<img src={reactLogo} className="logo react" alt="React logo" />
 				</a>
 			</div>
-			<h1 className="text-3xl font-mono underline">Vite + React</h1>
+			<h1 className="text-3xl font-mono underline text-secondary">
+				Vite + React
+			</h1>
 			<div className="card">
 				<button onClick={inc}>count is {count}</button>
 				<p>
@@ -29,7 +30,7 @@ function App() {
 			<p className="read-the-docs">
 				Click on the Vite and React logos to learn more
 			</p>
-		</>
+		</div>
 	);
 }
 
