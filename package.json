@@ -18,9 +18,11 @@
 	},
 	"dependencies": {
 		"@million/lint": "^1.0.0-rc.84",
+		"immer": "^10.1.1",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
-		"use-signals": "^0.1.1"
+		"use-signals": "^0.1.1",
+		"zustand": "^4.5.4"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.8.3",
@@ -33,6 +35,7 @@
 		"@types/react-dom": "^18.3.0",
 		"@vitejs/plugin-react-swc": "^3.7.0",
 		"browserslist": "^4.23.2",
+		"clsx": "^2.1.1",
 		"husky": "^9.1.4",
 		"jsdom": "^24.1.1",
 		"lightningcss": "^1.25.1",

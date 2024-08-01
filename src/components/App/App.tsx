@@ -1,4 +1,5 @@
 import reactLogo from "@/assets/react.svg";
+import { useThemeStore } from "@/store/ThemeStore";
 import { Signal, useSignal } from "use-signals";
 import viteLogo from "/vite.svg";
 
@@ -7,6 +8,7 @@ const counter = new Signal.State(0);
 function App() {
 	const count = useSignal(counter);
 	const inc = () => counter.set(counter.get() + 1);
+	const setTheme = useThemeStore((state) => state.setTheme);
 
 	return (
 		<div className="bg-primary h-dvh w-dvw">
@@ -22,7 +24,14 @@ function App() {
 				Vite + React
 			</h1>
 			<div className="card">
-				<button onClick={inc}>count is {count}</button>
+				<button
+					onClick={() => {
+						inc();
+						setTheme("");
+					}}
+				>
+					count is {count}
+				</button>
 				<p>
 					Edit <code>src/App.tsx</code> and save to test HMR
 				</p>
