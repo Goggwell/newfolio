@@ -27,7 +27,7 @@ function App() {
 				<button
 					onClick={() => {
 						inc();
-						setTheme("");
+						setTheme("ner");
 					}}
 				>
 					count is {count}
