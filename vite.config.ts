@@ -4,8 +4,9 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
 // https://vitejs.dev/config/
+const _plugins = [MillionLint.vite(), react()];
 export default defineConfig({
-	plugins: [react(), MillionLint.vite()],
+	plugins: _plugins,
 	resolve: {
 		alias: {
 			"@/": new URL("./src/", import.meta.url).pathname,
