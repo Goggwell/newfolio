@@ -8,9 +8,10 @@ type ThemeProviderProps = {
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
 	const theme = useThemeStore((state) => state.theme);
+	const scheme = useThemeStore((state) => state.scheme);
 
 	return (
-		<main data-theme={theme} className={clsx(theme)}>
+		<main data-theme={theme} className={clsx(scheme)}>
 			{children}
 		</main>
 	);
