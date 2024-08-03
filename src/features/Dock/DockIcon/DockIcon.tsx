@@ -1,7 +1,8 @@
 import { DockContext } from "@/contexts/DockContext";
 import { cn } from "@/utils/cn";
 import { motion, useSpring, useTransform } from "framer-motion";
-import { PropsWithChildren, ReactNode, useContext, useRef } from "react";
+import { PropsWithChildren, ReactNode, useMemo, useRef } from "react";
+import { useContextSelector } from "use-context-selector";
 
 type DockIconProps = {
 	size?: number;
@@ -25,7 +26,7 @@ export function DockIcon({
 	...props
 }: DockIconProps) {
 	const ref = useRef<HTMLDivElement>(null);
-	const mouseX = useContext(DockContext);
+	const mouseX = useContextSelector(DockContext, (v) => v);
 
 	const distanceCalc = useTransform(mouseX!, (val: number) => {
 		const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
@@ -45,10 +46,12 @@ export function DockIcon({
 		damping: 18,
 	});
 
+	const memoizedStyle = useMemo(() => ({ width: width }), [width]);
+
 	return (
 		<motion.div
 			ref={ref}
-			style={{ width }}
+			style={memoizedStyle}
 			className={cn(
 				"flex aspect-square cursor-pointer items-center justify-center rounded-full",
 				className,
