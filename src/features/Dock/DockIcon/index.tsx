@@ -1,0 +1,1 @@
+export { DockIcon } from "./DockIcon";
