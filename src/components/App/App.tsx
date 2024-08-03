@@ -1,13 +1,12 @@
 import reactLogo from "@/assets/react.svg";
 import { useThemeStore } from "@/store/ThemeStore";
-import { Signal, useSignal } from "use-signals";
+import { signal } from "@preact/signals-react";
 import viteLogo from "/vite.svg";
 
-const counter = new Signal.State(0);
+const count = signal(0);
 
 function App() {
-	const count = useSignal(counter);
-	const inc = () => counter.set(counter.get() + 1);
+	const inc = () => count.value++;
 	const setTheme = useThemeStore((state) => state.setTheme);
 
 	return (
@@ -30,7 +29,7 @@ function App() {
 						setTheme("ner");
 					}}
 				>
-					count is {count}
+					<>count is {count}</>
 				</button>
 				<p>
 					Edit <code>src/App.tsx</code> and save to test HMR

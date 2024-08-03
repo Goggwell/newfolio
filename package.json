@@ -18,14 +18,16 @@
 	},
 	"dependencies": {
 		"@million/lint": "^1.0.0-rc.84",
+		"@preact/signals-react": "^2.1.0",
 		"immer": "^10.1.1",
+		"million": "^3.1.11",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
-		"use-signals": "^0.1.1",
 		"zustand": "^4.5.4"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.8.3",
+		"@preact/signals-react-transform": "^0.4.0",
 		"@tailwindcss/vite": "^4.0.0-alpha.18",
 		"@testing-library/jest-dom": "^6.4.8",
 		"@testing-library/react": "^16.0.0",
@@ -33,7 +35,7 @@
 		"@types/node": "^22.0.0",
 		"@types/react": "^18.3.3",
 		"@types/react-dom": "^18.3.0",
-		"@vitejs/plugin-react-swc": "^3.7.0",
+		"@vitejs/plugin-react": "^4.3.1",
 		"browserslist": "^4.23.2",
 		"clsx": "^2.1.1",
 		"husky": "^9.1.4",

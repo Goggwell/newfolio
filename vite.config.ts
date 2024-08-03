@@ -1,13 +1,25 @@
+import MillionLint from "@million/lint";
 /// <reference types="vitest" />
 import tailwindcss from "@tailwindcss/vite";
-// import MillionLint from "@million/lint";
-import react from "@vitejs/plugin-react-swc";
+import react from "@vitejs/plugin-react";
 import browserslist from "browserslist";
 import { browserslistToTargets } from "lightningcss";
+import million from "million/compiler";
 import { defineConfig } from "vite";
 
 // https://vitejs.dev/config/
-const _plugins = [react(), tailwindcss()];
+const _plugins = [
+	million.vite({
+		auto: true,
+	}),
+	MillionLint.vite(),
+	react({
+		babel: {
+			plugins: [["module:@preact/signals-react-transform"]],
+		},
+	}),
+	tailwindcss(),
+];
 export default defineConfig({
 	plugins: _plugins,
 	resolve: {
