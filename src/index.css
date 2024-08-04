@@ -4,6 +4,29 @@
   --color-primary: #f2d5cf;
   --color-secondary: #414559;
   --color-tertiary: #e78284;
+  --color-success: #00ffff;
+  --color-warning: #00ff00;
+  --color-error: #ff0000;
+}
+
+[data-theme='poimandres'],
+main.light[data-theme='poimandres'] {
+  --color-primary: #fefeff;
+  --color-secondary: #1b1e28;
+  --color-tertiary: #0ebfff;
+  --color-success: #5de4c7;
+  --color-warning: #fffac2;
+  --color-error: #d0679d;
+}
+
+[data-theme='catppuccin-mocha'],
+main.light[data-theme='catppuccin-mocha'] {
+  --color-primary: #f5e0dc;
+  --color-secondary: #1e1e2e;
+  --color-tertiary: #89b4fa;
+  --color-success: #a6e3a1;
+  --color-warning: #f9e2af;
+  --color-error: #f38ba8;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -11,17 +34,29 @@
     --color-primary: #232634;
     --color-secondary: #c6d0f5;
   }
+
+  [data-theme='poimandres'] {
+    --color-primary: #1b1e28;
+    --color-secondary: #fff;
+    --color-tertiary: #add7ff;
+  }
+
+  [data-theme='catppuccin-mocha'] {
+    --color-primary: #1e1e2e;
+    --color-secondary: #f5e0dc;
+    --color-tertiary: #cba6f7;
 }
 
-[data-theme='wood'],
-main.light[data-theme='wood'] {
-  --color-primary: #fff;
-  --color-secondary: #000;
-}
-
-main.dark[data-theme='wood'] {
-  --color-primary: #000;
+main.dark[data-theme='poimandres'] {
+  --color-primary: #1b1e28;
   --color-secondary: #fff;
+  --color-tertiary: #add7ff;
+}
+
+main.dark[data-theme='catppuccin-mocha'] {
+  --color-primary: #1e1e2e;
+  --color-secondary: #f5e0dc;
+  --color-tertiary: #cba6f7;
 }
 
 :root {
@@ -35,4 +70,8 @@ main.dark[data-theme='wood'] {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.lucide {
+  color: var(--color-secondary);
 }
