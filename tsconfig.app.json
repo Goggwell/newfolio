@@ -26,6 +26,7 @@
 		/* Aliases */
 		"paths": {
 			"@/assets/*": ["./src/assets/*"],
+			"@/constants/*": ["./src/constants/*"],
 			"@/contexts/*": ["./src/contexts/*"],
 			"@/components/*": ["./src/components/*"],
 			"@/features/*": ["./src/features/*"],

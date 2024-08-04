@@ -1,3 +1,4 @@
+import { programsList } from "@/constants/programsList";
 import { Desktop } from "@/features/Desktop";
 import { Dock } from "@/features/Dock";
 import { DockContainer } from "@/features/Dock/DockContainer";
@@ -37,11 +38,13 @@ function App() {
 					<>count is {count}</>
 				</button>
 			</div>
-			<Suspense fallback={<div>Loading...</div>}>
-				<ProgramWindow>
-					<h2>Drag me!</h2>
-				</ProgramWindow>
-			</Suspense>
+			{programsList.map((program) => (
+				<Suspense fallback={<div>Loading...</div>} key={program.id}>
+					<ProgramWindow>
+						<program.program />
+					</ProgramWindow>
+				</Suspense>
+			))}
 			<DockContainer className="fixed p-8 bottom-0 left-1/2 -translate-x-1/2 z-10">
 				<Dock direction="middle">
 					{Array.from({ length: 5 }).map((_, i) => (
