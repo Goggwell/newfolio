@@ -44,9 +44,9 @@ export function DockIcon({
 	);
 
 	let width = useSpring(widthSync, {
-		mass: 0.1,
-		stiffness: 125,
-		damping: 18,
+		mass: 1,
+		stiffness: 300,
+		damping: 20,
 	});
 
 	const memoizedStyle = useMemo(() => ({ width: width }), [width]);

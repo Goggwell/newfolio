@@ -7,7 +7,7 @@ export function ThemeSwitcher() {
 	const { theme, scheme, setTheme, setScheme } = useThemeStore();
 
 	return (
-		<div className="w-full h-full relative flex flex-col gap-2 p-2 bg-primary text-secondary rounded-lg">
+		<div className="w-full h-full relative flex flex-col gap-2 p-2 bg-primary text-secondary rounded-b-lg">
 			<div className="flex items-center gap-2">
 				{colorSchemeList.map((colorScheme) => (
 					<button
