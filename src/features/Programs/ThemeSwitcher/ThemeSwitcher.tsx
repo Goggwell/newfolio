@@ -39,7 +39,9 @@ export function ThemeSwitcher() {
 						)}
 						onClick={() => setTheme(colorTheme.value)}
 					>
-						<h2 className="text-lg text-center">{colorTheme.name}</h2>
+						<h2 className="text-lg text-center tracking-tight">
+							{colorTheme.name}
+						</h2>
 					</button>
 				))}
 			</div>

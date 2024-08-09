@@ -3,8 +3,6 @@ import { Desktop } from "@/features/Desktop";
 import { Dock } from "@/features/Dock";
 import { DockContainer } from "@/features/Dock/DockContainer";
 import { DockIcon } from "@/features/Dock/DockIcon";
-import { useThemeStore } from "@/store/ThemeStore";
-import { signal } from "@preact/signals-react";
 import { Suspense, lazy } from "react";
 import viteLogo from "/vite.svg";
 
@@ -14,30 +12,9 @@ const ProgramWindow = lazy(() =>
 	})),
 );
 
-const count = signal(0);
-
 function App() {
-	const inc = () => count.value++;
-	const setTheme = useThemeStore((state) => state.setTheme);
-
 	return (
 		<Desktop>
-			<h1 className="text-3xl font-mono underline text-secondary">
-				Vite + React
-			</h1>
-			<div className="card">
-				<button
-					onClick={() => {
-						inc();
-						setTheme("ner");
-					}}
-					style={{
-						fontSize: `${count.value + 1}rem`,
-					}}
-				>
-					<>count is {count}</>
-				</button>
-			</div>
 			{programsList.map((program) => (
 				<Suspense fallback={<div>Loading...</div>} key={program.id}>
 					<ProgramWindow>

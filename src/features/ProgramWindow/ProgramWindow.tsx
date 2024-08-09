@@ -31,12 +31,16 @@ export function ProgramWindow({ className, children }: ProgramWindowProps) {
 				dragControls={controls}
 				dragListener={false}
 				dragConstraints={{
-					top: 0,
+					top: 20,
 					left: 0,
 					right: window.innerWidth - 400,
 					bottom: window.innerHeight - 400,
 				}}
 				dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
+				initial={{
+					x: window.innerWidth / 2 - 200,
+					y: window.innerHeight / 2 - 200,
+				}}
 			>
 				<m.div
 					className="absolute -top-7 left-0 w-full backdrop-blur-sm flex items-center gap-2 z-1 p-2 bg-secondary/10 rounded-t-lg opacity-0 hover:opacity-100 transition-opacity duration-250"

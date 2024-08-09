@@ -1,5 +1,69 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "ABC Favorit";
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://res.cloudinary.com/dht1hywnn/raw/upload/v1/fonts/abc_favorit/abcfavorit-book.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "ABC Favorit";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://res.cloudinary.com/dht1hywnn/raw/upload/v1/fonts/abc_favorit/abcfavorit.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "ABC Favorit Mono";
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://res.cloudinary.com/dht1hywnn/raw/upload/v1/fonts/abc_favorit/abcfavoritmono-book.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "ABC Favorit Mono";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://res.cloudinary.com/dht1hywnn/raw/upload/v1/fonts/abc_favorit/abcfavoritmono.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Suisse Intl";
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://res.cloudinary.com/dht1hywnn/raw/upload/v1/fonts/suisse/suisseintl-light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Suisse Intl";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://res.cloudinary.com/dht1hywnn/raw/upload/v1/fonts/suisse/suisseintl.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Suisse Intl";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://res.cloudinary.com/dht1hywnn/raw/upload/v1/fonts/suisse/suisseintl-medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Suisse Intl Mono";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://res.cloudinary.com/dht1hywnn/raw/upload/v1/fonts/suisse/suisseintlmono.woff2") format("woff2");
+}
+
 @theme {
   --color-primary: #f2d5cf;
   --color-secondary: #414559;
@@ -7,6 +71,7 @@
   --color-success: #00ffff;
   --color-warning: #00ff00;
   --color-error: #ff0000;
+  --font-family-base: "ABC Favorit", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 [data-theme='poimandres'],
@@ -61,7 +126,7 @@ main.dark[data-theme='catppuccin-mocha'] {
 }
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: var(--font-family-base);
   line-height: 1.5;
   font-weight: 400;
 

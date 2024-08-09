@@ -7,9 +7,7 @@ import { ReactNode, forwardRef } from "react";
 const loadFramerFeatures = () =>
 	import("@/utils/framerFeatures").then((res) => res.default);
 
-const dockVariants = cva(
-	"h-[58px] p-2 flex gap-2 rounded-2xl border-2 border-secondary supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 backdrop-blur-md",
-);
+const dockVariants = cva("h-[58px] p-2 flex gap-2 rounded-2xl bg-secondary");
 
 type DockProps = {
 	className?: string;
