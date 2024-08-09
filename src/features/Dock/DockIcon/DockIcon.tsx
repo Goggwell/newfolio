@@ -1,8 +1,11 @@
 import { DockContext } from "@/contexts/DockContext";
 import { cn } from "@/utils/cn";
-import { motion, useSpring, useTransform } from "framer-motion";
+import { LazyMotion, m, useSpring, useTransform } from "framer-motion";
 import { PropsWithChildren, ReactNode, useMemo, useRef } from "react";
 import { useContextSelector } from "use-context-selector";
+
+const loadFramerFeatures = () =>
+	import("@/utils/framerFeatures").then((res) => res.default);
 
 type DockIconProps = {
 	size?: number;
@@ -49,16 +52,18 @@ export function DockIcon({
 	const memoizedStyle = useMemo(() => ({ width: width }), [width]);
 
 	return (
-		<motion.div
-			ref={ref}
-			style={memoizedStyle}
-			className={cn(
-				"flex aspect-square cursor-pointer items-center justify-center rounded-full",
-				className,
-			)}
-			{...props}
-		>
-			{children}
-		</motion.div>
+		<LazyMotion strict features={loadFramerFeatures}>
+			<m.div
+				ref={ref}
+				style={memoizedStyle}
+				className={cn(
+					"flex aspect-square cursor-pointer items-center justify-center rounded-full",
+					className,
+				)}
+				{...props}
+			>
+				{children}
+			</m.div>
+		</LazyMotion>
 	);
 }
