@@ -1,45 +1,60 @@
-import { computed, signal } from "@preact/signals-react";
+import { useComputed, useSignal } from "@preact/signals-react";
 import React, { useCallback, useRef } from "react";
 
 type Position = { x: number; y: number };
 
-export const pos = signal<Position>({
-	x: window.innerWidth / 2,
-	y: window.innerHeight / 2,
-});
-export const dragging = signal(false);
-
 export function useDraggable() {
+	const pos = useSignal<Position>({
+		x: 0,
+		y: 0,
+	});
+	const dragging = useSignal(false);
 	const ref = useRef<HTMLDialogElement>(null);
+	const startPosRef = useRef<Position>({ x: 0, y: 0 });
 
-	const handleMouseDown = useCallback((e: React.MouseEvent) => {
-		if (ref.current) {
-			dragging.value = true;
-			const startX = e.clientX - pos.value.x;
-			const startY = e.clientY - pos.value.y;
+	const handleMove = useCallback(
+		(e: MouseEvent | TouchEvent) => {
+			const clientX = "clientX" in e ? e.clientX : e.touches[0].clientX;
+			const clientY = "clientY" in e ? e.clientY : e.touches[0].clientY;
+			pos.value = {
+				x: clientX - startPosRef.current.x,
+				y: clientY - startPosRef.current.y,
+			};
+		},
+		[pos],
+	);
 
-			const handleMouseMove = (e: MouseEvent) => {
-				pos.value = {
-					x: e.clientX - startX,
-					y: e.clientY - startY,
+	const handleEnd = useCallback(() => {
+		dragging.value = false;
+		document.removeEventListener("mousemove", handleMove);
+		document.removeEventListener("mouseup", handleEnd);
+		document.removeEventListener("touchmove", handleMove);
+		document.removeEventListener("touchend", handleEnd);
+	}, [handleMove, dragging]);
+
+	const handleMouseDown = useCallback(
+		(e: React.MouseEvent | React.TouchEvent) => {
+			if (ref.current) {
+				dragging.value = true;
+				const clientX = "clientX" in e ? e.clientX : e.touches[0].clientX;
+				const clientY = "clientY" in e ? e.clientY : e.touches[0].clientY;
+				startPosRef.current = {
+					x: clientX - pos.value.x,
+					y: clientY - pos.value.y,
 				};
-			};
 
-			const handleMouseUp = () => {
-				dragging.value = false;
-				document.removeEventListener("mousemove", handleMouseMove);
-				document.removeEventListener("mouseup", handleMouseUp);
-			};
+				document.addEventListener("mousemove", handleMove);
+				document.addEventListener("mouseup", handleEnd);
+				document.addEventListener("touchmove", handleMove);
+				document.addEventListener("touchend", handleEnd);
+			}
+		},
+		[handleMove, handleEnd, dragging, pos],
+	);
 
-			document.addEventListener("mousemove", handleMouseMove);
-			document.addEventListener("mouseup", handleMouseUp);
-		}
-	}, []);
-
-	const style = computed(() => ({
-		left: `${pos.value.x}px`,
-		top: `${pos.value.y}px`,
-		cursor: dragging ? "grabbing" : "grab",
+	const style = useComputed(() => ({
+		transform: `translate(${pos.value.x}px, ${pos.value.y}px)`,
+		cursor: dragging.value ? "grabbing" : "grab",
 		userSelect: "none" as const,
 	}));
 
