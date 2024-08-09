@@ -13,7 +13,7 @@ export function ProgramWindow({ className, children }: ProgramWindowProps) {
 	return (
 		<dialog
 			className={cn(
-				"absolute w-[400px] h-[400px] bg-white rounded-lg shadow-xl -translate-1/2",
+				"absolute w-[400px] h-[400px] shadow-xl bg-transparent rounded-lg",
 				className,
 			)}
 			ref={ref}

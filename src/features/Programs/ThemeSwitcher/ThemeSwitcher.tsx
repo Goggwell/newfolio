@@ -4,10 +4,10 @@ import { useThemeStore } from "@/store/ThemeStore";
 import { cn } from "@/utils/cn";
 
 export function ThemeSwitcher() {
-	const { theme, scheme } = useThemeStore();
+	const { theme, scheme, setTheme, setScheme } = useThemeStore();
 
 	return (
-		<div className="w-full h-full relative flex flex-col gap-2 p-2 bg-primary text-secondary">
+		<div className="w-full h-full relative flex flex-col gap-2 p-2 bg-primary text-secondary rounded-lg">
 			<div className="flex items-center gap-2">
 				{colorSchemeList.map((colorScheme) => (
 					<button
@@ -18,9 +18,7 @@ export function ThemeSwitcher() {
 								"bg-secondary/10": colorScheme.value === scheme,
 							},
 						)}
-						onClick={() =>
-							useThemeStore.setState({ scheme: colorScheme.value })
-						}
+						onClick={() => setScheme(colorScheme.value)}
 					>
 						{colorScheme.icon}
 					</button>
@@ -39,7 +37,7 @@ export function ThemeSwitcher() {
 								"bg-secondary/10": colorTheme.value === theme,
 							},
 						)}
-						onClick={() => useThemeStore.setState({ theme: colorTheme.value })}
+						onClick={() => setTheme(colorTheme.value)}
 					>
 						<h2 className="text-lg text-center">{colorTheme.name}</h2>
 					</button>
