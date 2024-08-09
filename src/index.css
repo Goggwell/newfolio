@@ -45,6 +45,7 @@ main.light[data-theme='catppuccin-mocha'] {
     --color-primary: #1e1e2e;
     --color-secondary: #f5e0dc;
     --color-tertiary: #cba6f7;
+  }
 }
 
 main.dark[data-theme='poimandres'] {
@@ -70,6 +71,8 @@ main.dark[data-theme='catppuccin-mocha'] {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  user-select: none;
 }
 
 .lucide {
