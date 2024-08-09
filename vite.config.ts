@@ -1,5 +1,5 @@
-import MillionLint from "@million/lint";
 /// <reference types="vitest" />
+import MillionLint from "@million/lint";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import browserslist from "browserslist";
